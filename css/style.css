@@ -214,13 +214,13 @@ p {
   height: 40vh;
   border-radius: 65% 0 60% 0;
 
-  background-image: url('./../assets/index-cover.jpg');
+  background-image: url('./../assets/index/index-cover.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .cover-img_about-us {
-  background-image: url('./../assets/portada-nosotros.webp');
+  background-image: url('./../assets/about-us/portada-nosotros.webp');
 }
 
 /* pages */
