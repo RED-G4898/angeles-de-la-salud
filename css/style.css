@@ -35,7 +35,7 @@ header {
   max-height: 107px;
   min-height: 79px;
 
-  background-color: #f4f4f4c3;
+  background-color: #f4f4f4f7;
 
   grid-area: h;
 
@@ -285,11 +285,14 @@ p {
 
 .flip__front > h4{
   border-radius: 0 0 8px 8px;
+  padding: 16px 0;
   width: 100%;
 
-  background-color: #363636a7;
+  background-color: #363636d9;
 
   color: #f4f4f4;
+
+  display: inline-block;
 
   position: absolute;
   z-index: 1;
@@ -334,7 +337,7 @@ p {
   flex-direction: column;
   justify-content: center;
 
-  background-color: #363636a7;
+  background-color: #363636d9;
 
   color: #f4f4f4;
 
@@ -551,18 +554,13 @@ p {
 
   /* productos */
 
-  .product-offering {
+  .product-offer{
     flex-direction: column;
   }
 
-  .product-offering__card {
-    width: 96%;
-    height: auto;
-    border-radius: 0;
-  }
-
-  .product-offering__card > img {
-    height: 25vh;
+  .product-offer-card {
+    width: 75vw;
+    height: 40vh;
   }
 
   /* promociones */
@@ -681,18 +679,13 @@ p {
 
   /* productos */
 
-  .product-offering {
+  .product-offer{
     flex-direction: column;
   }
 
-  .product-offering__card {
-    width: 96%;
-    height: auto;
-    border-radius: 0;
-  }
-
-  .product-offering__card > img {
-    height: 25vh;
+  .product-offer-card {
+    width: 50vw;
+    height: 50vh;
   }
 
   /* promociones */
