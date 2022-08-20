@@ -631,6 +631,7 @@ p {
 @media screen and (min-width: 600px) and (max-width: 1239px) {
   body {
     grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 20vh 68vh 16vh;
     grid-gap: 8px;
     grid-template-areas: "h h h h h h h h"
       ". m m m m m m ."
@@ -655,9 +656,8 @@ p {
     width: fit-content;
 
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 4px;
   }
 
   .navbar-menu {
@@ -668,6 +668,14 @@ p {
 
   .navbar-menu-element {
     padding: 1vh 0;
+  }
+
+  .navbar-menu-element__link {
+    padding: 1vh 0;
+  }
+
+  .navbar-menu-element__link:hover {
+    padding: 1vh 16px;
   }
 
   .navbar-menu-element_social {
