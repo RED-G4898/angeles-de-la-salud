@@ -139,8 +139,6 @@ p {
 }
 
 .navbar-menu-element {
-  padding: 4.5vh 0;
-
   font-family: 'NeueHaasGroteskDisp Pro', sans-serif;
   font-size: 1.3rem;
   font-weight: 500;
@@ -152,8 +150,19 @@ p {
 }
 
 .navbar-menu-element__link {
+  border-radius: 0 0 8px 8px;
+  padding: 4.5vh 0;
+
+  display: inline-block;
+
   color: #005751;
   text-decoration: none;
+
+  transition: transform 0.6s;
+}
+
+.navbar-menu-element__link:hover {
+  padding: 4.5vh 16px;
 }
 
 .navbar-menu-element__link>img {
@@ -452,6 +461,7 @@ p {
 
 .hover-effect:hover {
   background-color: #676b6b35;
+  transform: translateY(-10px);
 }
 
 .txt-center {
