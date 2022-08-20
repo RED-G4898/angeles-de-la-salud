@@ -46,6 +46,7 @@ header {
 
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 
 main {
@@ -236,58 +237,111 @@ p {
   gap: 4px;
 }
 
-.product-offering {
-  margin: 48px 0;
+.product-offer{
+  margin-top: 48px;
 
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 48px;
+  gap: 32px;
 }
 
-.product-offering__card {
-  width: 32%;
-  height: 60vh;
-  border-radius: 8%;
+.product-offer-card {
+  background-color: transparent;
+  width: 20vw;
+  height: 50vh;
+  perspective: 1000px;
+}
 
-  background-color: #f4f4f4c3;
+.flip {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  text-align: center;
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.product-offer-card:hover .flip {
+  transform: rotateY(180deg);
+}
+
+.flip__front, .flip__back {
+  width: 100%;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 16px;
+
+  position: absolute;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-.product-offering__card > img {
+.flip__front > h4{
+  border-radius: 0 0 8px 8px;
   width: 100%;
-  height: 50%;
+
+  background-color: #363636a7;
+
+  color: #f4f4f4;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+}
+
+.flip__front > img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
 
   object-fit: cover;
 }
 
-.product-offering__card > h4 {
-  border-bottom: groove 3px #f4f4f4c3;
-  padding-bottom: 4px;
+.flip__back {
+  background-color: #f4f4f4c3;
+
+  display: flex;
+  align-items: center;
+
+  color: white;
+  transform: rotateY(180deg);
 }
 
-.product-offering__card > p {
-  margin: auto auto;
-  padding: 0 24px 12px 24px;
+.flip__back > img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
 
-  overflow: auto;
+  object-fit: cover;
+
+  transform: rotateY(180deg);
 }
 
-.product-offering__card > p::-webkit-scrollbar {
-  width: 2px;
+.flip__back > p {
+  border-radius: 8px;
+  padding: 8%;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: #363636a7;
+
+  color: #f4f4f4;
+
+  position: absolute;
+  z-index: 1;
 }
 
-.product-offering__card > p::-webkit-scrollbar-thumb {
-  border: 3px solid #a1a1a138;
-  border-radius: 20px;
-
-  background-color: #a1a1a138;
-}
 
 /* promociones */
 
