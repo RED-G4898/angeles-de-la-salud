@@ -493,6 +493,12 @@ p {
   align-items: center;
 }
 
+.float-animation {
+  box-shadow: 4px 4px 8px #363636a9;
+
+  animation: float-animation ease-in-out 2s infinite;
+}
+
 /* media queries */
 
 /* phone */
@@ -810,4 +816,10 @@ p {
   .cover-img {
     height: 36vh;
   }
+}
+
+@keyframes float-animation {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 4px); }
+  100%   { transform: translate(0, -0px); }   
 }
