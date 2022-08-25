@@ -1,64 +1,128 @@
 @import url('./fonts.css');
 
 * {
-    font-family: 'NeueHaasGroteskDisp Pro', sans-serif;
-    font-weight: 500;
-  }
+  margin: 0;
+  font-family: 'NeueHaasGroteskDisp Pro', sans-serif;
+  font-weight: 500;
 
-  :root {
-    font-size: 16px;
-  }
+  box-sizing: border-box;
+}
 
-  body {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 16vh 68vh 16vh;
-    grid-template-areas: "h h h h h h h h h h h h"
-                         ". . m m m m m m m m . ."
-                         ". . f f f f f f f f . .";
-  }
+:root {
+  font-size: 16px;
+}
 
-  header {
-    border-bottom: groove 3px #f4f4f4c3;
+body {
+  min-height: 100vh;
+}
 
-    background-color: #f4f4f4f7;
+header {
+  height: 12vh;
+  border-bottom: groove 3px #f4f4f4c3;
 
-    grid-area: h;
-    align-self: center;
+  background-color: #f4f4f4f7;
+}
 
-    z-index: 2;
-  }
+.main-index {
+  height: 72vh;
+}
 
-  h1 {
-    font-family: 'NeueHaasGroteskDisp Pro', sans-serif;
-    font-weight: bold;
-    color: #005751;
-  }
 
-  h2 {
-    font-family: 'NeueHaasGroteskDisp Pro Md', sans-serif;
-    font-size: 2rem;
-    font-weight: 500;
-    color: #005751;
-    line-height: 2rem;
-  }
+footer {
+  height: 16vh;
 
-  h3 {
-    font-family: 'NeueHaasGroteskDisp Pro Md', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2rem;
-  }
+  border-top: ridge 3px #f4f4f4c3;
 
-  h4 {
-    font-family: 'NeueHaasGroteskDisp Pro Md', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    line-height: 2rem;
-  }
+  background-color: #f4f4f4f7;
+}
 
-  p {
-    color: #363636;
-    letter-spacing: 1px;
-    text-align: justify;
-  }
+h1 {
+  font-family: 'NeueHaasGroteskDisp Pro', sans-serif;
+  font-weight: bold;
+  color: #005751;
+}
+
+h2 {
+  font-family: 'NeueHaasGroteskDisp Pro Md', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #005751;
+  line-height: 2rem;
+}
+
+h3 {
+  font-family: 'NeueHaasGroteskDisp Pro Md', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2rem;
+}
+
+h4 {
+  font-family: 'NeueHaasGroteskDisp Pro Md', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 2rem;
+}
+
+p {
+  color: #363636;
+  letter-spacing: 1px;
+  text-align: justify;
+}
+
+/* Classes */
+
+/* General */
+.button {
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+
+  background-color: #005751;
+
+  font-size: 1.2rem;
+  color: #f4f4f4;
+}
+
+.button:hover {
+  background-color: #417e7f;
+
+  color: #f4f4f4;
+}
+
+/* navbar */
+
+.navbar-link {
+
+  color: #005751;
+
+  transition: transform 0.6s;
+}
+
+.navbar-link:hover {
+  border-bottom: groove 3px #005751;
+  border-radius: 0 0 8px 8px;
+
+  background-color: #676b6b35;
+
+  transform: translateY(-10px);
+}
+
+.navbar-link_active {
+  border-bottom: groove 3px #005751;
+  border-radius: 0 0 8px 8px;
+}
+
+/* cover */
+.cover-img {
+  border-radius: 65% 0 60% 0;
+  height: 32vh;
+}
+
+.cover-img > img {
+  border-radius: 65% 0 60% 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* No BEM Moddifiers */
