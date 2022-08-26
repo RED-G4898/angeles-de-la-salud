@@ -17,10 +17,13 @@ body {
 }
 
 header {
-  height: 12vh;
   border-bottom: groove 3px #f4f4f4c3;
 
   background-color: #f4f4f4f7;
+
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .main-index {
@@ -116,7 +119,6 @@ p {
 /* cover */
 .cover-img {
   border-radius: 65% 0 60% 0;
-  height: 32vh;
 }
 
 .cover-img > img {
@@ -128,7 +130,7 @@ p {
 /* productos */
 .product-offer-card {
   background-color: transparent;
-  width: 20vw;
+  width: 32%;
   height: 50vh;
   perspective: 1000px;
 }
@@ -216,3 +218,34 @@ p {
 
 
 /* No BEM Moddifiers */
+
+/* media queries */
+
+/* mobile */
+
+@media screen and (max-width: 575px) {
+  .navbar-col {
+    flex-direction: column;
+  }
+
+  .product-offer-card {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+}
+
+/* tablet */
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .product-offer-card {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .product-offer-card {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+}
