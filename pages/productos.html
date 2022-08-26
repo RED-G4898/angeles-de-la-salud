@@ -4,14 +4,121 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./../css/style.css">
     <title>Ángeles de la Salud</title>
 </head>
 <body>
-    <header>
-
+    <header class="d-flex justify-content-center align-items-center">
+        <nav class="navbar">
+            <section class="container-fluid justify-content-center align-items-baseline">
+                <a class="navbar-brand" href="./../index.html"><h1 class="fs-3">Ángeles de la Salud</h1></a>
+                <div class="nav">
+                    <a class="nav-link text-dark fs-5 navbar-link" href="./../index.html" target="_self">Inicio</a>
+                    <a class="nav-link text-dark fs-5 navbar-link navbar-link_active" href="./productos.html" target="_self">Productos</a>
+                    <a class="nav-link text-dark fs-5 navbar-link" href="./promociones.html" target="_self">Promociones</a>
+                    <a class="nav-link text-dark fs-5 navbar-link" href="./nosotros.html" target="_self">Nosotros</a>
+                    <a class="nav-link text-dark fs-5 navbar-link" href="./contacto.html" target="_self">Contacto</a>
+                </div>
+                <div class="nav">
+                    <a class="nav-link text-dark fs-5 navbar-link" href="https://www.facebook.com/f.angelesdelasalud" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a class="nav-link text-dark fs-5 navbar-link" href="" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a class="nav-link text-dark fs-5 navbar-link" href="mailto:contacto@angelesdelasalud.com.mx" target="_blank"><i class="bi bi-envelope"></i></a>
+                </div>
+            </section>
+        </nav>
     </header>
-    <main>
-
+    <main class="d-flex flex-column align-items-center">
+        <article class="d-flex flex-column mt-4 col-8">
+            <h2 class="mt-4 align-self-start">Productos</h2>
+            <h3>Naturales</h3>
+            <p>Contamos con una amplia variedad de productos naturales en diversas presentaciones para complementar tu día a día con los beneficios de la naturaleza y la herbolaria mexicana.</p>
+            <section class="d-flex justify-content-between">
+                <article class="product-offer-card">
+                    <section class="flip">
+                        <section class="flip__front d-flex flex-column justify-content-center">
+                            <img src="./../assets/products/herbs.jpg" alt="">
+                            <h4 class="mb-0">Plantas Medicinales</h4>
+                        </section>
+                        <section class="flip__back d-flex flex-column justify-content-center align-items-center">
+                            <img src="./../assets/products/herbs.jpg" alt="">
+                            <p class="text-center d-flex align-items-center mb-0">Ofrecemos una amplia gama de plantas medicinales que sirven de complemento en el tratamiento de múltiples padecimientos y que puedes utilizar de diversas formas según las recomendaciones que tenemos para ti.</p>
+                        </section>
+                    </section>
+                </article>
+                <article class="product-offer-card">
+                    <section class="flip">
+                        <section class="flip__front d-flex flex-column justify-content-center">
+                            <img src="./../assets/products/herb-capsules.jpg" alt="">
+                            <h4 class="mb-0">Cápsulas</h4>
+                        </section>
+                        <section class="flip__back d-flex flex-column justify-content-center align-items-center">
+                            <img src="./../assets/products/herb-capsules.jpg" alt="">
+                            <p class="text-center d-flex align-items-center mb-0">También podrás encontrar plantas, cortezas, vegetales y otros productos en su versíon encapsulada que podras usar como complemento de dietas, o de distintos tratamientos.</p>
+                        </section>
+                    </section>
+                </article>
+                <article class="product-offer-card">
+                    <section class="flip">
+                        <section class="flip__front d-flex flex-column justify-content-center">
+                            <img src="./../assets/products/herb-extract.jpg" alt="">
+                            <h4 class="mb-0">Extractos de Plantas</h4>
+                        </section>
+                        <section class="flip__back d-flex flex-column justify-content-center align-items-center">
+                            <img src="./../assets/products/herb-extract.jpg" alt="">
+                            <p class="text-center d-flex align-items-center mb-0">Además de encapsulados y plantas en crudo, también tenemos para ti extractos de plantas que puedes tomar en disoluciones.</p>
+                        </section>
+                    </section>
+                </article>
+            </section>
+        </article>
+        <hr>
+        <article class="d-flex flex-column mt-4 col-8">
+            <h3>Genéricos</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni dignissimos magnam obcaecati
+                eos autem, voluptas deleniti perspiciatis saepe esse enim architecto excepturi eaque hic odit accusantium
+                inventore. Adipisci, incidunt dolore?</p>
+            <section class="d-flex justify-content-between">
+                <article class="product-offer-card">
+                    <section class="flip">
+                        <section class="flip__front d-flex flex-column justify-content-center">
+                            <img src="./../assets/products/herbs.jpg" alt="">
+                            <h4 class="mb-0">Plantas Medicinales</h4>
+                        </section>
+                        <section class="flip__back d-flex flex-column justify-content-center align-items-center">
+                            <img src="./../assets/products/herbs.jpg" alt="">
+                            <p class="text-center d-flex align-items-center mb-0">Ofrecemos una amplia gama de plantas medicinales que sirven de complemento en el tratamiento de múltiples padecimientos y que puedes utilizar de diversas formas según las recomendaciones que tenemos para ti.</p>
+                        </section>
+                    </section>
+                </article>
+                <article class="product-offer-card">
+                    <section class="flip">
+                        <section class="flip__front d-flex flex-column justify-content-center">
+                            <img src="./../assets/products/herbs.jpg" alt="">
+                            <h4 class="mb-0">Plantas Medicinales</h4>
+                        </section>
+                        <section class="flip__back d-flex flex-column justify-content-center align-items-center">
+                            <img src="./../assets/products/herbs.jpg" alt="">
+                            <p class="text-center d-flex align-items-center mb-0">Ofrecemos una amplia gama de plantas medicinales que sirven de complemento en el tratamiento de múltiples padecimientos y que puedes utilizar de diversas formas según las recomendaciones que tenemos para ti.</p>
+                        </section>
+                    </section>
+                </article>
+                <article class="product-offer-card">
+                    <section class="flip">
+                        <section class="flip__front d-flex flex-column justify-content-center">
+                            <img src="./../assets/products/herbs.jpg" alt="">
+                            <h4 class="mb-0">Plantas Medicinales</h4>
+                        </section>
+                        <section class="flip__back d-flex flex-column justify-content-center align-items-center">
+                            <img src="./../assets/products/herbs.jpg" alt="">
+                            <p class="text-center d-flex align-items-center mb-0">Ofrecemos una amplia gama de plantas medicinales que sirven de complemento en el tratamiento de múltiples padecimientos y que puedes utilizar de diversas formas según las recomendaciones que tenemos para ti.</p>
+                        </section>
+                    </section>
+                </article>
+            </section>
+        </article>
     </main>
     <footer>
 
