@@ -1,17 +1,193 @@
+@use 'index'
+@use 'productos'
+
 $regular-font: 'NeueHaasGroteskDisp Pro', sans-serif
 $medium-font: 'NeueHaasGroteskDisp Pro Md', sans-serif
-$bold-font: 'NeueHaasGroteskDisp Pro', sans-serif
 $primary-color: #005751
-$secondary-color: #f4f4f4
+$light-color: #f4f4f4
+$light-color-c3: #f4f4f4c3
+$light-color-f7: #f4f4f4f7
+$dark-color: #363636
+$dark-color-d9: #363636d9
 
 *
-    margin: 0
-    font-family: $regular-font
-    box-sizing: border-box
+  margin: 0
+  font-family: $regular-font
+  font-weight: 500
+
+  box-sizing: border-box
+
+:root
+  font-size: 16px
+
+body
+  min-height: 100vh
 
 header
-    border: groove 3px $secondary-color
-    background-color: $secondary-color
-    position: sticky
-    top: 0
+  border-bottom: groove 3px $light-color-c3
 
+  background-color: $light-color-f7
+
+  position: sticky
+  top: 0
+  z-index: 2
+
+.main-index
+  height: 72vh
+
+
+footer
+  height: 16vh
+
+  border-top: ridge 3px $light-color-c3
+
+  background-color: $light-color-f7
+
+h1
+  font-family: $regular-font
+  font-weight: bold
+  color: $primary-color
+
+h2
+  font-family: $medium-font
+  font-size: 2rem
+  font-weight: 500
+  color: $primary-color
+  line-height: 2rem
+
+h3
+  font-family: $medium-font
+  font-size: 1.5rem
+  font-weight: 500
+  line-height: 2rem
+
+h4
+  font-family: $medium-font
+  font-size: 1.2rem
+  font-weight: 500
+  line-height: 2rem
+
+p
+  color: $dark-color
+  letter-spacing: 1px
+  text-align: justify
+
+.button
+  border: none
+  border-radius: 8px
+  padding: 12px
+
+  background-color: $primary-color
+
+  font-size: 1.2rem
+  color: $light-color
+
+.button:hover
+  background-color: #417e7f
+
+  color: $light-color
+
+
+.navbar-link
+  color: $primary-color
+
+  transition: transform 0.6s
+
+.navbar-link:hover
+  border-bottom: groove 3px $primary-color
+  border-radius: 0 0 8px 8px
+
+  background-color: $dark-color-d9
+
+  transform: translateY(-10px)
+
+.navbar-link_active
+  border-bottom: groove 3px $primary-color
+  border-radius: 0 0 8px 8px
+
+/* mobile */
+
+@media screen and (max-width: 575px)
+  .main-index
+    height: fit-content
+
+  footer
+    height: fit-content
+
+  /* general */
+
+  /* navbar */
+
+
+  .navbar-col
+    flex-direction: column
+
+  /* cover */
+  .cover-img
+    margin: 2rem 0
+    border-radius: 0
+
+  .cover-img > img
+    border-radius: 0
+
+  /* productos */
+
+  .product-offer-card
+    margin-bottom: 16px
+    width: 100%
+
+/* tablet */
+
+@media screen and (min-width: 576px) and (max-width: 767px)
+  .main-index
+    height: fit-content
+
+  footer
+    height: fit-content
+
+  /* general */
+
+  /* cover */
+  .cover-img
+    margin: 2rem 0
+    border-radius: 0
+
+  .cover-img > img
+    border-radius: 0
+
+  /* productos */
+
+  .product-offer-card
+    margin-bottom: 16px
+    width: 100%
+
+@media screen and (min-width: 768px) and (max-width: 991px)
+  .main-index
+    height: fit-content
+
+  footer
+    height: fit-content
+
+  /* general */
+
+  /* cover */
+  .cover-img
+    margin: 2rem 0
+    border-radius: 0
+
+  .cover-img > img
+    border-radius: 0
+
+  /* productos */
+
+  .product-offer-card
+    margin-bottom: 16px
+    width: 100%
+
+/* laptop */
+@media screen and (min-width: 992px) and (max-width: 1199px)
+  .main-index
+    height: fit-content
+
+  footer
+    height: fit-content
