@@ -8,31 +8,39 @@
     justify-content: space-around
 
 .navbar__title
-    @include g.bold-font(normal, 2rem, g.$primary-color)
+    @include g.blk-font(normal, 2rem, g.$primary-color)
 
     text-decoration: none
 
 .navbar-menu
     display: flex
-    gap: 16px
+    gap: 32px
     align-items: center
 
     list-style: none
 
+.navbar-element
+    display: inline-block
+
 .navbar-element__link
-    padding: 8px
+    display: inline-block
 
-    @include g.regular-font(normal, 1.2rem, g.$dark-color)
-
+    @include g.regular-font(normal, 1.2rem, g.$primary-color)
     text-decoration: none
 
-    transition: transform 0.6s
+    transition: all 0.6s ease-in-out
 
     &:hover
-        color: g.$light-color
-        background-color: g.$hover-color
+        border-bottom: g.$primary-color 2px solid
+        border-radius: 0 0 8px 8px
+        padding: 4vh 12px 12px 12px
 
-        transform: translateY(-20px)
+        color: g.$light-color
+        background-color: g.$hover-color_navbar-element
+
+        transform: translateY(-10px)
 
 .navbar-element__link_social
     border-radius: 100px
+
+
