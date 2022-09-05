@@ -1,7 +1,10 @@
 @use 'globaldefinitions' as g
 
 .navbar
+    width: 100%
+
     display: flex
+    align-items: center
     justify-content: space-around
 
 .navbar__title
@@ -23,9 +26,13 @@
 
     text-decoration: none
 
+    transition: transform 0.6s
+
     &:hover
         color: g.$light-color
         background-color: g.$hover-color
+
+        transform: translateY(-20px)
 
 .navbar-element__link_social
     border-radius: 100px
