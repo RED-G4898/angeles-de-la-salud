@@ -1,0 +1,42 @@
+@import url('./fonts.css')
+
+// Variables
+
+$primary-color: #005751
+$light-color: #f4f4f4
+$dark-color: #363636
+$hover-color: #676b6b
+
+$base-font: 'NeueHaasGroteskDisp Pro', sans-serif
+
+// Mixins
+
+// Font mixins
+
+@mixin regular-font($style, $size, $color)
+  font-family: 'NeueHaasGroteskDisp Pro Lt', sans-serif
+  font-style: $style
+  font-size: $size
+  font-weight: 300
+  color: $color
+
+@mixin mid-font($style, $size, $color)
+  font-family: 'NeueHaasGroteskDisp Pro Md', sans-serif
+  font-style: $style
+  font-size: $size
+  font-weight: 500
+  color: $color
+
+@mixin bold-font($style, $size, $color)
+  font-family: 'NeueHaasGroteskDisp Pro', sans-serif
+  font-style: $style
+  font-size: $size
+  font-weight: bold
+  color: $color
+
+@mixin blk-font($style, $size, $color)
+  font-family: 'NeueHaasGroteskDisp Pro Blk', sans-serif
+  font-style: $style
+  font-size: $size
+  font-weight: 900
+  color: $color
