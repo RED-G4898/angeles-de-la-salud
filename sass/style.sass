@@ -4,17 +4,21 @@
 // General styles
 
 *
+  // Box Model
   margin: 0
   padding: 0
   box-sizing: border-box
 
+  // Typography
   font-family: g.$base-font
   font-weight: 500
 
 :root
+  // Typography
   font-size: 16px
 
 body
+  // Display & position
   display: grid
   grid-template-rows: 8vh auto 16vh
   grid-template-columns: repeat(12, 1fr)
@@ -22,16 +26,20 @@ body
   gap: 16px
 
 header
-  border-bottom: groove 3px rgba(g.$light-color, 0.797)
-
-  background-color: g.$light-color
-
+  // Display & position
   grid-area: h
+
   display: flex
   align-items: center
 
   position: sticky
   top: 0
   z-index: 2
+
+  // Box Model
+  border-bottom: groove 3px rgba(g.$light-color, 0.797)
+
+  // Background
+  background-color: g.$light-color
 
 

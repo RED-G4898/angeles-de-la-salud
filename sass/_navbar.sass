@@ -1,11 +1,14 @@
 @use 'globaldefinitions' as g
 
 .navbar
+    // Display & position
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+
+    // Box Model
     width: 100%
 
-    display: flex
-    align-items: center
-    justify-content: space-around
 
 .navbar__title
     @include g.blk-font(normal, 2rem, g.$primary-color)
@@ -14,8 +17,8 @@
 
 .navbar-menu
     display: flex
-    gap: 16px
     align-items: center
+    gap: 16px
 
     list-style: none
 
@@ -24,7 +27,13 @@
 
     &::after
         content: '|'
+
         padding-left: 16px
+
+    &:last-child::after
+        content: ''
+
+        padding-left: 0
 
 .navbar-element__link
     display: inline-block
@@ -35,14 +44,19 @@
     transition: all 0.6s ease-in-out
 
     &:hover
+        transform: translateY(-16px)
+
         border-bottom: g.$primary-color 2px solid
         border-radius: 0 0 8px 8px
         padding: 2vh 12px 12px 12px
 
-        color: g.$light-color
         background-color: g.$hover-color_navbar-element
 
-        transform: translateY(-16px)
+        color: g.$light-color
+
+.navbar-element__link_active
+    border-bottom: g.$primary-color 2px solid
+
 
 .navbar-element__link_social
     border-radius: 100px
