@@ -2,9 +2,8 @@
 
 .navbar
     // Display & position
-    display: flex
+    @extend %flex-center
     justify-content: space-evenly
-    align-items: center
 
     // Box Model
     width: 100%
@@ -16,8 +15,7 @@
     text-decoration: none
 
 .navbar-menu
-    display: flex
-    align-items: center
+    @extend %flex-center
     gap: 16px
 
     list-style: none

@@ -29,8 +29,7 @@ header
   // Display & position
   grid-area: h
 
-  display: flex
-  align-items: center
+  @extend %flex-center
 
   position: sticky
   top: 0
@@ -41,5 +40,8 @@ header
 
   // Background
   background-color: g.$light-color
+
+main
+  min-height: 100vh - 16vh - 8vh
 
 
