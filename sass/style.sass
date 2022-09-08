@@ -4,44 +4,58 @@
 // General styles
 
 *
-  // Box Model
-  margin: 0
-  padding: 0
-  box-sizing: border-box
+    // Box Model
+    margin: 0
+    padding: 0
+    box-sizing: border-box
 
-  // Typography
-  font-family: g.$base-font
-  font-weight: 500
+    // Typography
+    font-family: g.$base-font
+    font-weight: 500
 
 :root
-  // Typography
-  font-size: 16px
+    // Typography
+    font-size: 16px
 
 body
-  // Display & position
-  display: grid
-  grid-template-rows: 100px auto calc( 16vh - 100px )
-  grid-template-columns: repeat(12, 1fr)
-  grid-template-areas: "h h h h h h h h h h h h" ". . m m m m m m m m . ." ". . f f f f f f f f . ."
-  gap: 16px
+    // Display & position
+    display: grid
+    grid-template-rows: 100px auto calc( 16vh - 100px )
+    grid-template-columns: repeat(12, 1fr)
+    grid-template-areas: "h h h h h h h h h h h h" ". . m m m m m m m m . ." ". . f f f f f f f f . ."
+    gap: 16px
 
 header
-  // Display & position
-  grid-area: h
+    // Display & position
+    grid-area: h
 
-  @extend %flex-center
+    @extend %flex-center
 
-  position: sticky
-  top: 0
-  z-index: 2
+    position: sticky
+    top: 0
+    z-index: 2
 
-  // Box Model
-  border-bottom: groove 3px rgba(g.$light-color, 0.797)
+    // Box Model
+    border-bottom: groove 3px rgba(g.$light-color, 0.797)
 
-  // Background
-  background-color: g.$light-color
+    // Background
+    background-color: g.$light-color
 
 main
-  min-height: calc( 100vh - 16vh - 100px )
+    min-height: calc( 100vh - 16vh - 100px )
+
+    // Display & position
+    grid-area: m
+
+h2
+    @include g.bold-font(normal, 2rem, g.$primary-color)
 
 
+// Media queries
+
+// Phone
+
+@media screen and (max-width: 768px)
+    body
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-areas: "h h h h" "m m m m" "f f f f"
