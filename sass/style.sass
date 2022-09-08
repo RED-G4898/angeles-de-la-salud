@@ -20,7 +20,7 @@
 body
   // Display & position
   display: grid
-  grid-template-rows: 8vh auto 16vh
+  grid-template-rows: 100px auto calc( 16vh - 100px )
   grid-template-columns: repeat(12, 1fr)
   grid-template-areas: "h h h h h h h h h h h h" ". . m m m m m m m m . ." ". . f f f f f f f f . ."
   gap: 16px
@@ -42,6 +42,6 @@ header
   background-color: g.$light-color
 
 main
-  min-height: 100vh - 16vh - 8vh
+  min-height: calc( 100vh - 16vh - 100px )
 
 
