@@ -1,0 +1,156 @@
+@use 'globaldefinitions' as g
+
+.navbar
+    // Display & position
+    @extend %flex-between-center
+    flex-flow: row nowrap
+    grid-area: c
+
+    // Box Model
+    width: 100%
+
+
+.navbar__title
+    @include g.blk-font(normal, 2rem, g.$primary-color)
+
+    text-decoration: none
+
+    @media screen and (max-width: 390px)
+        font-size: 1.5rem
+
+.navbar-menu
+    @extend %flex-center
+    gap: 16px
+
+    list-style: none
+
+.navbar-element
+    display: inline-block
+
+    &::after
+        content: '|'
+
+        padding-left: 16px
+
+    &:last-child::after
+        content: ''
+
+        padding-left: 0
+
+.navbar-element__link
+    display: inline-block
+
+    @include g.regular-font(normal, 1.2rem, g.$dark-color)
+    text-decoration: none
+
+    transition: all 0.5s ease-in-out
+
+    &:hover
+        transform: translateY(-16px)
+
+        border-bottom: g.$primary-color 2px solid
+        border-radius: 0 0 8px 8px
+        padding: 2vh 12px 12px 12px
+
+        background-color: g.$hover-color_navbar-element
+
+        color: g.$light-color
+
+.navbar-element__link_active
+    border-bottom: g.$primary-color 2px solid
+
+
+.navbar-element__link_social
+    border-radius: 100px
+
+.navbar-dropdown
+    display: none
+
+.bi-list
+    @include g.bold-font(normal, 1.5rem, g.$dark-color)
+
+.navbar-dropdown-elements
+    border-bottom: groove 3px rgba(g.$light-color, 0.797)
+    padding: 16px 0
+    width: 100%
+
+    background-color: g.$primary-color
+
+    display: none
+
+    position: absolute
+    top: 8vh
+    z-index: 1
+
+    @media screen and (max-width: 768px) and (orientation: landscape)
+        margin-top: 2vh
+
+        top: inherit
+
+.navbar-dropdown-elements__link
+    @include g.regular-font(normal, 1.2rem, g.$light-color)
+    text-decoration: none
+
+.navbar-dropdown:hover .navbar-dropdown-elements
+    @extend %flex-center
+    flex-flow: column wrap
+    gap: 8px
+
+    left: 0px
+
+
+
+// Media queries
+
+// Phone
+@media screen and (max-width: 768px)
+    .navbar
+        justify-content: space-around
+
+    .navbar-menu
+        display: none
+
+    .navbar-dropdown
+        display: inline-block
+
+// tablet
+@media screen and (min-width: 769px) and (max-width: 1279px)
+    .navbar
+        flex-flow: column wrap
+        gap: 8px
+
+    .navbar-menu_social
+        display: none
+
+    .navbar-element__link
+        display: inline-block
+
+        @include g.regular-font(normal, 1rem, g.$dark-color)
+        text-decoration: none
+
+        transition: none
+
+        &:hover
+            transform: none
+
+            border-bottom: 0 none
+            border-radius: 0
+            padding: 0
+
+            background-color: #ffffff00
+
+            color: g.$dark-color
+
+// Laptop & small monitors
+
+@media screen and (min-width: 1280px) and (max-width: 1719px)
+    .navbar__title
+        @include g.blk-font(normal, 1.5rem, g.$primary-color)
+
+    .navbar-menu_social
+        display: none
+
+    .navbar-element__link
+        @include g.regular-font(normal, 1rem, g.$dark-color)
+
+
