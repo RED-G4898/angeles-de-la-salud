@@ -1,0 +1,44 @@
+@use 'globaldefinitions' as g
+
+.promociones-main
+    @extend %flex-column
+
+.promociones-title
+    align-self: flex-start
+
+.sales
+    @extend %flex-between-center
+    flex-direction: row
+    gap: 32px
+
+.sales__card
+    @extend %flex-column
+    gap: 8px
+
+    text-align: center
+
+// Media queries
+
+// Phone
+
+@media screen and (max-width: 768px)
+    .promociones-title
+        margin-left: 5%
+
+    .sales
+        width: 90%
+
+        flex-direction: column
+        gap: 32px
+
+// Tablet
+
+@media screen and (min-width: 769px) and (max-width: 1279px)
+    .promociones-title
+        margin-left: 5%
+
+    .sales
+        width: 90%
+
+        flex-direction: column
+        gap: 32px
