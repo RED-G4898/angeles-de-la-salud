@@ -2,7 +2,9 @@
 
 .navbar
     // Display & position
-    @extend %flex-evenly-center
+    @extend %flex-between-center
+    flex-flow: row nowrap
+    grid-area: c
 
     // Box Model
     width: 100%
@@ -48,7 +50,7 @@
 
         border-bottom: g.$primary-color 2px solid
         border-radius: 0 0 8px 8px
-        padding: 40px 12px 12px 12px
+        padding: 2vh 12px 12px 12px
 
         background-color: g.$hover-color_navbar-element
 
@@ -77,8 +79,13 @@
     display: none
 
     position: absolute
-    top: 97px
+    top: 8vh
     z-index: 1
+
+    @media screen and (max-width: 768px) and (orientation: landscape)
+        margin-top: 2vh
+
+        top: inherit
 
 .navbar-dropdown-elements__link
     @include g.regular-font(normal, 1.2rem, g.$light-color)
@@ -118,7 +125,7 @@
     .navbar-element__link
         display: inline-block
 
-        @include g.regular-font(normal, 1.2rem, g.$dark-color)
+        @include g.regular-font(normal, 1rem, g.$dark-color)
         text-decoration: none
 
         transition: none
@@ -133,5 +140,17 @@
             background-color: #ffffff00
 
             color: g.$dark-color
+
+// Laptop & small monitors
+
+@media screen and (min-width: 1280px) and (max-width: 1719px)
+    .navbar__title
+        @include g.blk-font(normal, 1.5rem, g.$primary-color)
+
+    .navbar-menu_social
+        display: none
+
+    .navbar-element__link
+        @include g.regular-font(normal, 1rem, g.$dark-color)
 
 

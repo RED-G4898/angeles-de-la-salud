@@ -10,12 +10,20 @@ $dark-color: #363636
 $dark-color-d9: #363636d9
 $hover-color: #676b6b
 $hover-color_navbar-element: #a7adad
+$hover-color_button: #15726c
 
 $base-font: 'NeueHaasGroteskDisp Pro', sans-serif
 
 // Mixins
 
 // Font mixins
+
+@mixin light-font($style, $size, $color)
+    font-family: 'NeueHaasGroteskDisp Pro XLt', sans-serif
+    font-style: $style
+    font-size: $size
+    font-weight: 300
+    color: $color
 
 @mixin regular-font($style, $size, $color)
   font-family: 'NeueHaasGroteskDisp Pro Lt', sans-serif
@@ -45,6 +53,10 @@ $base-font: 'NeueHaasGroteskDisp Pro', sans-serif
   font-weight: 900
   color: $color
 
+@mixin link-style($color)
+  text-decoration: none
+  color: $color
+
 // Placeholders
 
 %flex-center
@@ -56,3 +68,12 @@ $base-font: 'NeueHaasGroteskDisp Pro', sans-serif
   display: flex
   justify-content: space-evenly
   align-items: center
+
+%flex-between-center
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+%flex-column
+  display: flex
+  flex-direction: column
