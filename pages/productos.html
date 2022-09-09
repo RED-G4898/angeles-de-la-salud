@@ -4,17 +4,173 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./../css/style.css">
     <title>Productos</title>
 </head>
 <body>
     <header>
-
+        <nav class="navbar">
+            <h1><a class="navbar__title" href="./../index.html" target="_self">Ángeles de la Salud</a></h1>
+            <ul class="navbar-menu">
+                <li class="navbar-element"><a class="navbar-element__link" href="./../index.html" target="_self">INICIO</a></li>
+                <li class="navbar-element"><a class="navbar-element__link navbar-element__link_active" href="./productos.html" target="_self">PRODUCTOS</a></li>
+                <li class="navbar-element"><a class="navbar-element__link" href="./promociones.html" target="_self">PROMOCIONES</a></li>
+                <li class="navbar-element"><a class="navbar-element__link" href="./nosotros.html" target="_self">NOSOTROS</a></li>
+                <li class="navbar-element"><a class="navbar-element__link" href="./contacto.html" target="_self">CONTACTO</a></li>
+            </ul>
+            <ul class="navbar-menu navbar-menu_social">
+                <li class="navbar-element"><a class="navbar-element__link navbar-element__link_social" href="" target="_blank"><i class="bi bi-facebook"></i></a></li>
+                <li class="navbar-element"><a class="navbar-element__link navbar-element__link_social" href="" target="_blank"><i class="bi bi-instagram"></i></a></li>
+                <li class="navbar-element"><a class="navbar-element__link navbar-element__link_social" href="" target="_blank"><i class="bi bi-envelope"></i></a></li>
+            </ul>
+            <article class="navbar-dropdown">
+                <section class="navbar-dropdown__btn"><i class="bi bi-list"></i></section>
+                <section class="navbar-dropdown-elements">
+                    <a class="navbar-dropdown-elements__link" href="./../index.html" target="_self" rel="noopener noreferrer">Inicio</a>
+                    <a class="navbar-dropdown-elements__link" href="./productos.html" target="_self" rel="noopener noreferrer">Productos</a>
+                    <a class="navbar-dropdown-elements__link" href="./promociones.html" target="_self" rel="noopener noreferrer">Promociones</a>
+                    <a class="navbar-dropdown-elements__link" href="./nosotros.html" target="_self" rel="noopener noreferrer">Nosotros</a>
+                    <a class="navbar-dropdown-elements__link" href="./contacto.html" target="_self" rel="noopener noreferrer">Contacto</a>
+                </section>
+            </article>
+        </nav>
     </header>
-    <main>
-
-    </main>
+    <main class="productos-main">
+        <h2 class="productos-main__title">Productos</h2>
+        <article class="products">
+            <h3 id="naturales">Naturales</h3>
+            <p class="txt-center">
+                Contamos con una amplia variedad de productos naturales en diversas presentaciones para
+                complementar tu día a día con los beneficios de la naturaleza y la herbolaria mexicana.
+            </p>
+            <section class="product-offer">
+                <article class="product-offer-card">
+                    <section class="flip">
+                        <section class="flip__front">
+                            <img src="./../assets/products/herbs.jpg" alt="">
+                            <h4>Plantas Medicinales</h4>
+                        </section>
+                        <section class="flip__back">
+                            <img src="./../assets/products/herbs.jpg" alt="">
+                            <p class="txt-center">Ponemos a tu disposición un amplio catálogo de plantas medicinales que podras adquirir bajo pedido.</p>
+                        </section>
+                    </section>
+                </article>
+                <article class="product-offer-card">
+                    <section class="flip">
+                        <section class="flip__front">
+                            <img src="./../assets/products/herb-capsules.jpg" alt="">
+                            <h4>Cápsulas</h4>
+                        </section>
+                        <section class="flip__back">
+                            <img src="./../assets/products/herb-capsules.jpg" alt="">
+                            <p class="txt-center">Plantas, cortezas y vegetales son algunos de los articulos que podrás encontrar como encapsulados y para complementar tus dietas, o distintos tratamientos.</p>
+                        </section>
+                    </section>
+                </article>
+                <article class="product-offer-card">
+                    <section class="flip">
+                        <section class="flip__front">
+                            <img src="./../assets/products/herb-extract.jpg" alt="">
+                            <h4>Extractos de Plantas</h4>
+                        </section>
+                        <section class="flip__back">
+                            <img src="./../assets/products/herb-extract.jpg" alt="">
+                            <p class="txt-center">Además de encapsulados y plantas en crudo, también tenemos para ti extractos de plantas que puedes tomar en disoluciones con alcohol o agua.</p>
+                        </section>
+                    </section>
+                </article>
+            </section>
+        </article>
+        <article class="products">
+            <h3 id="genericos">Genéricos</h3>
+            <p class="txt-center">
+                El medico te preescribio muchos medicamentos y no saben dónde comprarlos, ven con nosotros, tenemos los mejores productos a los mejores precios.
+            </p>
+            <section class="product-offer">
+                <article class="product-offer-card">
+                    <section class="flip">
+                        <section class="flip__front">
+                            <img src="./../assets/products/antibiotic.jpg" alt="Frasco de medicamento genérico">
+                            <h4>Antibióticos</h4>
+                        </section>
+                        <section class="flip__back">
+                            <img src="./../assets/products/antibiotic.jpg" alt="Frasco de medicamento genérico">
+                            <p class="txt-center">Tenemos a la venta los antibióticos de tu receta médica a los mejores precios
+                                    del mercado y de la mejor calidad.<br><b class="important">SOLO VENTA CON RECETA</b>
+                            </p>
+                        </section>
+                    </section>
+                </article>
+                <article class="product-offer-card">
+                    <section class="flip">
+                        <section class="flip__front">
+                            <img src="./../assets/products/analgesic.jpg" alt="Frasco de medicamento genérico">
+                            <h4>Analgésicos</h4>
+                        </section>
+                        <section class="flip__back">
+                            <img src="./../assets/products/analgesic.jpg" alt="Frasco de medicamento genérico">
+                            <p class="txt-center">
+                                Te duele la cabeza o necesitas algún analgésico preescrito por tu medico, contamos con un amplio catalogo de analgésicos para todo tipo de dolores.
+                            </p>
+                        </section>
+                    </section>
+                </article>
+                <article class="product-offer-card">
+                    <section class="flip">
+                        <section class="flip__front">
+                            <img src="./../assets/products/medical-supplies.jpg" alt="Frasco de medicamento genérico">
+                            <h4>Suministros Médicos</h4>
+                        </section>
+                        <section class="flip__back">
+                            <img src="./../assets/products/medical-supplies.jpg" alt="Frasco de medicamento genérico">
+                            <p class="txt-center">
+                                Si te caiste o sufriste de alguna quemadura tenemos a tu disposición vendas, gasas, alcohol y otros suministros médicos de uso común a los mejores precios.
+                            </p>
+                        </section>
+                    </section>
+                </article>
+            </section>
+        </article>
+	</main>
     <footer>
-
+        <article class="general-info">
+            <section class="social-info">
+                <p class="social-info__p">Encuentranos en:</p>
+                <a class="social-info__link" href="https://"><i class="bi bi-facebook"></i></a>
+            </section>
+            <section class="dev-info">
+                <p>Desarrollado con ❤️ por <a class="dev-info__link" href="https://redg.dev" target="_blank">RED</a></p>
+            </section>
+            <section class="privacy-info">
+                <a class="privacy-info__link" href="">Aviso de Privacidad</a>
+            </section>
+        </article>
+        <article class="address">
+            <address>
+                <p class="address-content-p">Anacahuita 178, Pedregal de Santo Domingo,<br>Coyoacán, Ciudad de México, 04310</p>
+                <p class="address-content-p"><i class="address_content-p__icon bi bi-telephone"></i> | <a class="address_content-p__link" href="tel:+525550330068">(55) 5033 0068</a></p>
+                <p class="address-content-p"><i class="address_content-p__icon bi bi-envelope"></i> | <a class="address_content-p__link" href="mailto:contacto@angelesdelasalud.com.mx">contacto@angelesdelasalud.com.mx</a></p>
+            </address>
+        </article>
+        <article class="site-map">
+            <section class="home">
+                <a class="site-map__link" href="./../index.html" target="_self">INICIO</a>
+            </section>
+            <section class="our-offer">
+                <p class="site-map__title">NUESTRA OFERTA</p>
+                <a class="site-map__link" href="./productos.html" target="_self">Productos</a>
+                <a class="site-map__link" href="./productos.html#naturales" target="_self">Naturales</a>
+                <a class="site-map__link" href="./productos.html#genericos" target="_self">Genericos</a>
+                <a class="site-map__link" href="./promociones.html" target="_self">Promociones</a>
+            </section>
+            <section class="about-us">
+                <p class="site-map__title">ACERCA DE NOSOTROS</p>
+                <a class="site-map__link" href="./nosotros.html">Nosotros</a>
+                <a class="site-map__link" href="./contacto.html">Contacto</a>
+            </section>
+        </article>
     </footer>
 </body>
 </html>

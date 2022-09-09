@@ -1,6 +1,7 @@
 @use 'globaldefinitions' as g
 @use 'navbar'
 @use 'cover'
+@use 'productos'
 
 // General styles
 
@@ -81,7 +82,15 @@ footer
 h2
     @include g.bold-font(normal, 2rem, g.$primary-color)
 
+h3
+    @include g.bold-font(normal, 1.5rem, g.$primary-color)
+
+h4
+    @include g.bold-font(normal, 1.2rem, g.$primary-color)
+
 // General classes
+
+// footer
 
 .general-info
     grid-area: i
@@ -141,6 +150,16 @@ h2
     @media screen and (max-width: 768px)
         width: 75%
 
+// productos
+.productos-main
+    flex-direction: column
+
+// Modiffiers
+.txt-center
+    @include g.regular-font(normal, 1.1rem, g.$dark-color)
+    text-align: center
+    line-height: 1rem
+    letter-spacing: 1px
 
 // Media queries
 
