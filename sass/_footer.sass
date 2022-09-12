@@ -1,0 +1,170 @@
+@use 'globaldefinitions' as g
+
+.general-info
+    // Display & position
+    grid-area: i
+
+    @extend %flex-column
+    justify-content: center
+    gap: 8px
+
+.social-info
+    // Typography
+    line-height: 1.5rem
+
+.social-info__link
+    // Typography
+    @include g.regular-font(normal, 1.5rem, g.$light-color)
+    @include g.link-style(#085ddd)
+
+.privacy-info__link
+    // Typography
+    @include g.link-style(g.$light-color)
+
+.address
+    // Display & position
+    grid-area: a
+
+    address
+        // Display & position
+        @extend %flex-column
+        gap: 8px
+
+        // Typography
+        text-align: center
+
+.address_content-p__link
+    // Typography
+    @include g.link-style(g.$light-color)
+
+.site-map
+    // Display & position
+    grid-area: s
+
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+.site-map__title
+    // Box Model
+    border-bottom: solid 1.5px rgba(g.$light-color, 0.797)
+
+    // Typography
+    @include g.bold-font(normal, 1.2rem, g.$light-color)
+
+.site-map__link
+    // Typography
+    @include g.regular-font(normal, 1rem, g.$light-color)
+    @include g.link-style(g.$light-color)
+
+.our-offer
+    // Display & position
+    @extend %flex-column
+    gap: 4px
+
+    // Media queries
+    // Phone
+    @media screen and (max-width: 768px)
+        // Box Model
+        width: 50%
+
+.about-us
+    // Display & position
+    @extend %flex-column
+    gap: 4px
+
+    // Media queries
+    // Phone
+    @media screen and (max-width: 768px)
+        // Box Model
+        width: 75%
+
+
+// Media queries
+
+// Phone
+
+@media screen and (max-width: 768px)
+    body
+        // Display & position
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-areas: "h h h h" "m m m m" "f f f f"
+
+    header
+        // Display & position
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-areas: "c c c c"
+
+    footer
+        // Display & position
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-areas: "i i i i" "a a a a" "s s s s"
+        gap: 16px
+
+        // Box Model
+        padding: 16px 0
+        height: fit-content
+
+
+    .general-info
+        // Display & position
+        align-items: center
+
+        // Box Model
+        border-bottom: solid 1.5px g.$light-color
+        padding-bottom: 16px
+
+
+    .social-info
+        // Typography
+        text-align: center
+
+    .dev-info
+        // Typography
+        text-align: center
+
+    .privacy-info
+        // Typography
+        text-align: center
+
+    .address
+        // Box Model
+        border-bottom: solid 1.5px g.$light-color
+        padding-bottom: 16px
+
+
+    .site-map
+        // Display & position
+        flex-direction: column
+        align-items: center
+        gap: 16px
+
+        // Typography
+        text-align: center
+
+// Tablet
+
+@media screen and (min-width: 769px) and (max-width: 1279px)
+
+    .general-info
+        // Display & position
+        align-items: center
+
+        // Box Model
+        padding-bottom: 16px
+
+    .social-info
+        // Typography
+        text-align: center
+
+    .dev-info
+        // Typography
+        text-align: center
+
+    .privacy-info
+        // Typography
+        text-align: center
+
+    .address
+        // Box Model
+        padding-bottom: 16px
