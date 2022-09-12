@@ -1,54 +1,74 @@
 @use 'globaldefinitions' as g
 
 .cover
-    width: 100%
+    // Display & position
     @extend %flex-between-center
 
-.cover-text
-    width: 55%
+    // Box Model
+    width: 100%
 
+.cover-text
+    // Display & position
     @extend %flex-column
     justify-content: center
     gap: 16px
 
+    // Box Model
+    width: 55%
+
+
 .cover-text__title
+    // Typography
     line-height: 1.5rem
 
 .cover-text__p
+    // Typography
     @include g.light-font(normal, 1.2rem, g.$dark-color)
     line-height: 1.3rem
     letter-spacing: 1px
     text-align: justify
 
 .cover-text__button
+    // Display & position
     border-radius: 6px
     padding: 8px 8px
+    background-color: g.$primary-color
     width: fit-content
 
+    // Typography
     @include g.regular-font(normal, 1.2rem, g.$light-color)
     text-decoration: none
 
-    background-color: g.$primary-color
 
     &:hover
+        // Box Model
         background-color: g.$hover-color_button
 
 .cover-image
+    // Box Model
     border-radius: 65% 0 60% 0
     width: 40%
 
+    // Media queries
+    // Phone - Tablet
     @media screen and (max-width: 1279px)
+        // Box Model
         border-radius: 0
 
 .cover-image__content
+    // Box Model
     border-radius: 65% 0 60% 0
     width: 100%
     height: 100%
 
+    // Visuals
     object-fit: cover
     object-position: center top
 
+    // Media queries
+    // Phone - Tablet
     @media screen and (max-width: 1279px)
+        // Box Model
         border-radius: 0
 
 // Media queries
@@ -56,33 +76,40 @@
 // Phone
 @media screen and (max-width: 768px)
     .cover
+        // Display & position
         flex-direction: column
         gap: 16px
 
     .cover-text
+        // Box Model
         width: 90%
 
     .cover-image
+        // Box Model
         width: 90%
         height: 40vh
 
     .cover-image__content
+        // Visuals
         object-position: center center
 
-// tablet
+// Tablet
+
 @media screen and (min-width: 769px) and (max-width: 1279px)
     .cover
+        // Display & position
         flex-direction: column
         gap: 16px
 
     .cover-text
+        // Box Model
         width: 80%
 
     .cover-image
+        // Box Model
         width: 80%
         height: 40vh
 
     .cover-image__content
+        // Visuals
         object-position: center center
-// Laptop & small monitors
-@media screen and (min-width: 1280px) and (max-width: 1719px)

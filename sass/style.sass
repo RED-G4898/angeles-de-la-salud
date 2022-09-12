@@ -1,5 +1,6 @@
 @use 'globaldefinitions' as g
 @use 'navbar'
+@use 'footer'
 @use 'cover'
 @use 'productos'
 @use 'promociones'
@@ -22,16 +23,16 @@
     font-size: 16px
 
 body
-    min-height: 100vh
     // Display & position
     display: grid
     grid-template-columns: repeat(12, 1fr)
     grid-template-areas: "h h h h h h h h h h h h" ". . m m m m m m m m . ." "f f f f f f f f f f f f"
     gap: 16px
 
-header
-    height: 8vh
+    // Box Model
+    min-height: 100vh
 
+header
     // Display & position
     grid-area: h
 
@@ -48,28 +49,27 @@ header
 
     // Box Model
     border-bottom: groove 3px rgba(g.$light-color, 0.797)
-
-    // Background
     background-color: g.$light-color
+    height: 8vh
 
+    // Media queries
     @media screen and (max-height: 600px)
+        // Box Model
         height: 20vh
 
 main
-    width: 100%
-    min-height: 68vh
-
     // Display & position
     grid-area: m
 
     @extend %flex-evenly-center
 
-footer
+    // Box Model
     width: 100%
-    height: 20vh
+    min-height: 68vh
 
+footer
+    // Display & position
     grid-area: f
-
     display: grid
     grid-template-columns: repeat(12, 1fr)
     grid-template-areas: ". i i i a a a a s s s ."
@@ -77,87 +77,29 @@ footer
     justify-content: space-between
     align-items: center
 
+    // Box Model
     background-color: g.$dark-color
+    width: 100%
+    height: 20vh
 
+    // Typography
     color: g.$light-color
 
 h2
+    // Typography
     @include g.bold-font(normal, 2rem, g.$primary-color)
 
 h3
+    // Typography
     @include g.bold-font(normal, 1.5rem, g.$primary-color)
 
 h4
+    // Typography
     @include g.bold-font(normal, 1.2rem, g.$primary-color)
-
-// General classes
-
-// footer
-
-.general-info
-    grid-area: i
-
-    @extend %flex-column
-    justify-content: center
-    gap: 8px
-
-.social-info
-    line-height: 1.5rem
-
-.social-info__link
-    @include g.regular-font(normal, 1.5rem, g.$light-color)
-    @include g.link-style(#085ddd)
-
-.privacy-info__link
-    @include g.link-style(g.$light-color)
-
-.address
-    grid-area: a
-
-    address
-        @extend %flex-column
-        gap: 8px
-
-        text-align: center
-
-.address_content-p__link
-    @include g.link-style(g.$light-color)
-
-.site-map
-    grid-area: s
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-
-.site-map__title
-    border-bottom: solid 1.5px rgba(g.$light-color, 0.797)
-
-    @include g.bold-font(normal, 1.2rem, g.$light-color)
-
-.site-map__link
-    @include g.regular-font(normal, 1rem, g.$light-color)
-    @include g.link-style(g.$light-color)
-
-.our-offer
-    @extend %flex-column
-    gap: 4px
-
-    @media screen and (max-width: 768px)
-        width: 50%
-
-.about-us
-    @extend %flex-column
-    gap: 4px
-
-    @media screen and (max-width: 768px)
-        width: 75%
-
-// productos
-.productos-main
-    flex-direction: column
 
 // Modiffiers
 .txt-center
+    // Typography
     @include g.regular-font(normal, 1.1rem, g.$dark-color)
     text-align: center
     line-height: 1rem
@@ -169,90 +111,57 @@ h4
 
 @media screen and (max-width: 768px)
     body
+        // Display & position
         grid-template-columns: repeat(4, 1fr)
         grid-template-areas: "h h h h" "m m m m" "f f f f"
 
     header
+        // Display & position
         grid-template-columns: repeat(4, 1fr)
         grid-template-areas: "c c c c"
 
     footer
-        padding: 16px 0
-        height: fit-content
-
+        // Display & position
         grid-template-columns: repeat(4, 1fr)
         grid-template-areas: "i i i i" "a a a a" "s s s s"
         gap: 16px
 
-    .general-info
-        padding-bottom: 16px
-
-        border-bottom: solid 1.5px g.$light-color
-        align-items: center
-
-    .social-info
-        text-align: center
-
-    .dev-info
-        text-align: center
-
-    .privacy-info
-        text-align: center
-
-    .address
-        padding-bottom: 16px
-
-        border-bottom: solid 1.5px g.$light-color
-
-    .site-map
-        flex-direction: column
-        align-items: center
-        gap: 16px
-
-        text-align: center
+        // Box Model
+        padding: 16px 0
+        height: fit-content
 
 // Tablet
 
 @media screen and (min-width: 769px) and (max-width: 1279px)
     body
+        // Display & position
         grid-template-columns: repeat(8, 1fr)
         grid-template-areas: "h h h h h h h h" ". m m m m m m ." "f f f f f f f f"
 
 
     header
+        // Display & position
         grid-template-columns: repeat(8, 1fr)
         grid-template-areas: ". c c c c c c ."
 
     footer
-        padding: 16px 0
-        height: fit-content
-
+        // Display & position
         grid-template-columns: repeat(8, 1fr)
         grid-template-areas: "i i i i a a a a" ". s s s s s s ."
         gap: 16px
 
-    .general-info
-        padding-bottom: 16px
+        // Box Model
+        padding: 16px 0
+        height: fit-content
 
-        align-items: center
-
-    .social-info
-        text-align: center
-
-    .dev-info
-        text-align: center
-
-    .privacy-info
-        text-align: center
-
-    .address
-        padding-bottom: 16px
 
 // Laptop & small monitors
+
 @media screen and (min-width: 1280px) and (max-width: 1440px)
     main
+        // Box Model
         min-height: 68vh
 
     footer
+        // Display & position
         grid-template-areas: ". i i a a a s s s s s ."
-

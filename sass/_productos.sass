@@ -1,112 +1,146 @@
 @use 'globaldefinitions' as g
 
-.products
-    margin: 48px
+.productos-main
+    // Display & position
+    flex-direction: column
 
+.products
+    // Display & position
     @extend %flex-column
     align-items: center
     gap: 4px
 
+    // Box Model
+    margin: 48px
+
+
 .productos-main__title
+    // Display & position
     align-self: flex-start
 
 .product-offer
-    margin-top: 48px
-
+    // Display & position
     display: flex
     flex-direction: row
     gap: 32px
 
+    // Box Model
+    margin-top: 48px
+
+
 .product-offer-card
+    // Box Model
+    background-color: transparent
     width: 20vw
     height: 50vh
 
-    background-color: transparent
-
+    // Transitions & animations
     perspective: 1000px
 
 .flip
+    // Display & position
+    position: relative
+
+    // Box Model
     width: 100%
     height: 100%
 
-    position: relative
-
+    // Typography
     text-align: center
 
+    // Transitions & animations
     transition: transform 1s
     transform-style: preserve-3d
 
 .product-offer-card:hover 
     .flip
+        // Transitions & animations
         transform: rotateY(180deg)
 
 .flip__front, .flip__back
-    width: 100%
-    height: 100%
-
+    // Display & position
     @extend %flex-column
     @extend %flex-center
 
     position: absolute
 
+    // Box Model
+    width: 100%
+    height: 100%
+
+    // Other properties
     -webkit-backface-visibility: hidden
     backface-visibility: hidden
 
 .flip__front > h4
-    border-radius: 0 0 8px 8px
-    padding: 16px 0
-    width: 100%
-
-    background-color: g.$dark-color-d9
-
-    color: g.$light-color
-
+    // Display & position
     display: inline-block
 
     position: absolute
-    z-index: 1
     bottom: 0
+    z-index: 1
+    // Box Model
+    border-radius: 0 0 8px 8px
+    padding: 16px 0
+    background-color: g.$dark-color-d9
+    width: 100%
+
+    // Typography
+    color: g.$light-color
 
 .flip__front > img
+
+    // Box Model
     border-radius: 8px
     width: 100%
     height: 100%
 
+    // Visuals
     object-fit: cover
 
 .flip__back
-    background-color: g.$light-color-c3
-
+    // Display & position
     display: flex
     align-items: center
 
+    // Box Model
+    background-color: g.$light-color-c3
+
+    // Typography
     color: white
+
+    // Transitions & animations
     transform: rotateY(180deg)
 
 .flip__back > img
+    // Box Model
     border-radius: 8px
     width: 100%
     height: 100%
 
+    // Visuals
     object-fit: cover
 
+    // Transitions & animations
     transform: rotateY(180deg)
 
 .flip__back > p
-    border-radius: 8px
-    padding: 8%
-    width: 100%
-    height: 100%
-
+    // Display & position
     @extend %flex-column
     justify-content: center
 
-    background-color: #363636d9
-
-    color: g.$light-color
-
     position: absolute
     z-index: 1
+
+    // Box Model
+    border-radius: 8px
+    padding: 8%
+    background-color: #363636d9
+    width: 100%
+    height: 100%
+
+    // Typography
+    color: g.$light-color
 
 // Media queries
 
@@ -115,9 +149,11 @@
 @media screen and (max-width: 768px)
 
     .product-offer
+        // Display & position
         flex-direction: column
 
     .product-offer-card
+        // Box Model
         width: 75vw
         height: 40vh
 
@@ -126,8 +162,10 @@
 @media screen and (min-width: 769px) and (max-width: 1279px)
 
     .product-offer
+        // Display & position
         flex-direction: column
 
     .product-offer-card
+        // Box Model
         width: 75vw
         height: 40vh

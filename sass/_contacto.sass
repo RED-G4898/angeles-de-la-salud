@@ -1,92 +1,129 @@
 @use 'globaldefinitions' as g
 
 .contact-us
-    width: 100%
-
+    // Display & position
     @extend %flex-between-center
     align-items: flex-start
     gap: 64px
 
+    // Box Model
+    width: 100%
+
+    // Media queries
+    // Phone
     @media screen and (max-width: 768px)
+        // Display & position
         flex-direction: column
         align-items: center
         gap: 16px
 
+    // Tablet
     @media screen and (min-width: 769px) and (max-width: 1279px)
+        // Display & position
         flex-direction: column
         gap: 16px
 
 .branch
-    width: 50%
-
+    // Display & position
     @extend %flex-column
     gap: 16px
 
-    @media screen and (max-width: 1279px)
+    // Box Model
+    width: 50%
+
+    // Media queries
+    // Phone
+    @media screen and (max-width: 768px)
+        // Box Model
         width: 90%
 
-    @media screen and (max-width: 768px)
+    // Tablet
+    @media screen and (max-width: 1279px)
+        // Box Model
         width: 90%
 
 .branch__location
+    // Box Model
     height: 30vh
 
 .branch-address-p
+    // Typography
     @include g.regular-font(normal, 1.2rem, g.$dark-color)
     text-align: center
     line-height: 1.5rem
 
 .contact
-    width: 50%
-
+    // Display & position
     @extend %flex-column
     gap: 16px
 
-    @media screen and (max-width: 1279px)
+    // Box Model
+    width: 50%
+
+    // Media queries
+    // Phone
+    @media screen and (max-width: 768px)
+        // Box Model
         width: 90%
 
-    @media screen and (max-width: 768px)
+    // Tablet
+    @media screen and (max-width: 1279px)
+        // Box Model
         width: 90%
 
 .contact-form
+    // Display & position
     @extend %flex-column
     gap: 16px
 
 .contact-form-field
+    // Box Model
     border: none
 
 .contact-form-field__title
+    //Box Model
     margin-bottom: 8px
     border-bottom: solid 2px g.$primary-color
     width: 100%
 
+    // Typography
     @include g.bold-font(normal, 1.5rem, g.$dark-color)
     line-height: 1.5rem
 
 .contact-form-pair
+    // Box Model
     margin-bottom: 8px
 
 .contact-form-pair__title
-    margin-bottom: 2px
+    // Display & position
     display: block
 
+    // Box Model
+    margin-bottom: 2px
+
+    // Typography
     @include g.bold-font(normal, 1.2rem, g.$primary-color)
 
 .contact-form-pair__input
+    // Display & position
+    display: block
+
+    // Box Model
     border-radius: 4px
     width: 100%
     height: 2rem
 
-    display: block
 
 .contact-form__button
+    // Box Model
     border-radius: 6px
     padding: 8px
+    background-color: g.$primary-color
     width: 50%
 
-    background-color: g.$primary-color
-
+    // Typography
     @include g.bold-font(normal, 1.2rem, g.$light-color)
 
     &:hover
+        // Box Model
         background-color: g.$hover-color_button

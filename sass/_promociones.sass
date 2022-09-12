@@ -1,20 +1,25 @@
 @use 'globaldefinitions' as g
 
 .promociones-main
+    // Display & position
     @extend %flex-column
 
 .promociones-title
+    // Display & position
     align-self: flex-start
 
 .sales
+    // Display & position
     @extend %flex-between-center
     flex-direction: row
     gap: 32px
 
 .sales__card
+    // Display & position
     @extend %flex-column
     gap: 8px
 
+    // Typography
     text-align: center
 
 // Media queries
@@ -23,22 +28,29 @@
 
 @media screen and (max-width: 768px)
     .promociones-title
+        // Box Model
         margin-left: 5%
 
     .sales
-        width: 90%
-
+        // Display & position
         flex-direction: column
         gap: 32px
+
+        // Box Model
+        width: 90%
+
 
 // Tablet
 
 @media screen and (min-width: 769px) and (max-width: 1279px)
     .promociones-title
+        // Box Model
         margin-left: 5%
 
     .sales
-        width: 90%
-
+        // Display & position
         flex-direction: column
         gap: 32px
+
+        // Box Model
+        width: 90%
