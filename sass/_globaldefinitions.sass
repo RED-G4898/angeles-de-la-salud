@@ -57,6 +57,12 @@ $base-font: 'NeueHaasGroteskDisp Pro', sans-serif
   text-decoration: none
   color: $color
 
+@mixin grid($columns, $areas, $gap)
+  display: grid
+  grid-template-columns: repeat($columns, 1fr)
+  grid-template-areas: $areas
+  grid-gap: $gap
+
 // Placeholders
 
 %flex-center
