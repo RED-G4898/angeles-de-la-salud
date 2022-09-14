@@ -20,7 +20,15 @@
     @include g.bold-font(normal, 1.25rem, rgba(g.$dark-color, 0.75))
     text-align: center
 
-@media screen and (max-width: 768px)
-    .error
-        // Box Model
-        width: 90%
+.error-img
+// Box Model
+    width: 40%
+
+.error-img__content
+    // Box Model
+    width: 100%
+    height: 100%
+
+    // Visuals
+    object-fit: cover
+    object-position: center top
