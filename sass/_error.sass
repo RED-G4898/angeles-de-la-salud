@@ -1,0 +1,19 @@
+@use 'globaldefinitions' as g
+
+.error
+    // Display & position
+    @extend %flex-center
+    @extend %flex-column
+    gap: 32px
+
+
+
+
+.error__code
+    text-align: center
+
+.error__desc
+    @include g.bold-font(normal, 1.5rem, g.$dark-color)
+
+.error__fix
+    @include g.bold-font(normal, 1.25rem, rgba(g.$dark-color, 0.5))
