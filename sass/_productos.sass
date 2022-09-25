@@ -2,16 +2,13 @@
 
 .productos-main
     // Display & position
-    flex-direction: column
+    @extend %flex-column
 
 .products
     // Display & position
     @extend %flex-column
     align-items: center
     gap: 4px
-
-    // Box Model
-    margin: 48px
 
 .productos-main__title
     // Display & position
@@ -146,6 +143,10 @@
 
 @media screen and (max-width: 768px)
 
+    .productos-main
+        // Box Model
+        width: 90%
+
     .product-offer
         // Display & position
         flex-direction: column
@@ -158,6 +159,10 @@
 // Tablet
 
 @media screen and (min-width: 769px) and (max-width: 1279px)
+
+    .productos-main
+        // Box Model
+        width: 90%
 
     .product-offer
         // Display & position

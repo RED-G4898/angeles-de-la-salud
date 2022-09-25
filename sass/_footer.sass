@@ -15,7 +15,24 @@
 .social-info__link
     // Typography
     @include g.regular-font(normal, 1.5rem, g.$light-color)
-    @include g.link-style(#085ddd)
+    @include g.link-style(g.$light-color)
+
+.dev-info__link
+    @include g.bold-font(normal, 1.3rem, g.$light-color)
+    @include g.link-style(g.$light-color)
+    position: relative
+    overflow: hidden
+    transition: clip-path 275ms ease
+
+    &:hover::before
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+
+    &::before
+        @include g.bold-font(normal, 1.3rem, #d42020)
+        position: absolute
+        content: attr(data-content)
+        clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%)
+        transition: clip-path 275ms ease
 
 .privacy-info__link
     // Typography
