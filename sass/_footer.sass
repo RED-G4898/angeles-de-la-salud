@@ -18,21 +18,34 @@
     @include g.link-style(g.$light-color)
 
 .dev-info__link
-    @include g.bold-font(normal, 1.3rem, g.$light-color)
-    @include g.link-style(g.$light-color)
+    // Display & position
     position: relative
     overflow: hidden
+
+    // Typography
+    @include g.link-style(g.$light-color)
+    @include g.bold-font(normal, 1.3rem, g.$light-color)
+
+    // Transitions & animations
     transition: clip-path 275ms ease
 
     &:hover::before
+        // Other
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
 
     &::before
-        @include g.bold-font(normal, 1.3rem, #d42020)
+        // Display & position
         position: absolute
+
+        // Typography
+        @include g.bold-font(normal, 1.3rem, #d42020)
+
+        // Transitions & animations
+        transition: clip-path 275ms ease
+
+        // Other
         content: attr(data-content)
         clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%)
-        transition: clip-path 275ms ease
 
 .privacy-info__link
     // Typography
