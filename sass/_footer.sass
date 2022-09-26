@@ -38,6 +38,7 @@
     @include g.regular-font(normal, 1.5rem, g.$light-color)
     @include g.link-style(g.$light-color)
 
+
 .dev-info__link
     // Display & position
     position: relative
@@ -49,6 +50,9 @@
 
     // Transitions & animations
     transition: clip-path 275ms ease
+
+    &:hover
+        color: #ffffff00
 
     &:hover::before
         // Other
@@ -72,6 +76,30 @@
     // Typography
     @include g.link-style(g.$light-color)
 
+    // Transitions & animations
+    transition: clip-path 275ms ease
+
+    &:hover
+        color: #ffffff00
+
+    &:hover::before
+        // Other
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+
+    &::before
+        // Display & position
+        position: absolute
+
+        // Typography
+        color: #00B4A8
+
+        // Transitions & animations
+        transition: clip-path 275ms ease
+
+        // Other
+        content: attr(data-content)
+        clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%)
+
 .address
     // Display & position
     grid-area: a
@@ -90,6 +118,30 @@
 .address_content-p__link
     // Typography
     @include g.link-style(g.$light-color)
+
+    // Transitions & animations
+    transition: clip-path 275ms ease
+
+    &:hover
+        color: #ffffff00
+
+    &:hover::before
+        // Other
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+
+    &::before
+        // Display & position
+        position: absolute
+
+        // Typography
+        color: #00B4A8
+
+        // Transitions & animations
+        transition: clip-path 275ms ease
+
+        // Other
+        content: attr(data-content)
+        clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%)
 
 .site-map
     // Display & position
@@ -113,6 +165,30 @@
     // Typography
     @include g.regular-font(normal, 1rem, g.$light-color)
     @include g.link-style(g.$light-color)
+
+    // Transitions & animations
+    transition: clip-path 275ms ease
+
+    &:hover
+        color: #ffffff00
+
+    &:hover::before
+        // Other
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+
+    &::before
+        // Display & position
+        position: absolute
+
+        // Typography
+        color: #00B4A8
+
+        // Transitions & animations
+        transition: clip-path 275ms ease
+
+        // Other
+        content: attr(data-content)
+        clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%)
 
 .our-offer
     // Display & position
