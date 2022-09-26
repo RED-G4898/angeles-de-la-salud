@@ -60,7 +60,7 @@ main
 
     // Box Model
     width: 100%
-    min-height: 68vh
+    min-height: 63vh
 
 footer
     // Display & position
@@ -70,13 +70,30 @@ footer
     justify-content: space-between
     align-items: center
 
+    position: relative
+
     // Box Model
-    background-color: g.$dark-color
+    //background: linear-gradient(181deg,#00bfb2,#009389,#005751,#002b28,#001e1c)
+    background: linear-gradient(90deg,#5B5B5B,#363636,#1A1A1A,#131313)
+    background-size: 300% 300%
+    animation: gradient-animation 8s ease infinite
+
     width: 100%
-    height: 20vh
+    height: 25vh
 
     // Typography
     color: g.$light-color
+
+    // Other
+    overflow: hidden
+
+    @keyframes gradient-animation
+        0%
+            background-position: 0% 50%
+        50%
+            background-position: 100% 50%
+        100%
+            background-position: 0% 50%
 
 h2
     // Typography

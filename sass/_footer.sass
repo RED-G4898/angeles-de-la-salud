@@ -1,5 +1,19 @@
 @use 'globaldefinitions' as g
 
+.footer-edge
+    overflow: hidden
+    position: absolute
+    top: 0
+    left:0
+    z-index: 1
+
+    width: 100%
+
+.footer-edge__content
+    fill: #ffffff
+    width: 118%
+    height: 56px
+
 .general-info
     // Display & position
     grid-area: i
@@ -7,6 +21,9 @@
     @extend %flex-column
     justify-content: center
     gap: 8px
+
+    position: relative
+    z-index: 1
 
 .social-info
     // Typography
@@ -55,6 +72,9 @@
     // Display & position
     grid-area: a
 
+    position: relative
+    z-index: 1
+
     address
         // Display & position
         @extend %flex-column
@@ -74,6 +94,9 @@
     display: flex
     flex-direction: row
     justify-content: space-between
+
+    position: relative
+    z-index: 1
 
 .site-map__title
     // Box Model
