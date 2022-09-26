@@ -1,13 +1,17 @@
 @use 'globaldefinitions' as g
 
 .footer-edge
-    overflow: hidden
+    // Display & position
     position: absolute
     top: 0
     left:0
     z-index: 1
 
+    // Box Model
     width: 100%
+
+    // Others
+    overflow: hidden
 
 .footer-edge__content
     fill: #ffffff
@@ -138,6 +142,7 @@
 // Phone
 
 @media screen and (max-width: 768px)
+
     .general-info
         // Display & position
         align-items: center
@@ -184,7 +189,7 @@
         align-items: center
 
         // Box Model
-        margin-top: 16px
+        margin-top: 40px
         padding-bottom: 16px
 
     .social-info
@@ -201,4 +206,5 @@
 
     .address
         // Box Model
+        margin-top: 40px
         padding-bottom: 16px
