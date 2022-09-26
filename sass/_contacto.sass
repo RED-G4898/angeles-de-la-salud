@@ -109,14 +109,25 @@
     display: block
 
     // Box Model
+    border: g.$dark-color solid 1px
     border-radius: 4px
+    padding: 8px
     width: 100%
     height: 2rem
 
+    // Typography
+    @include g.regular-font(normal, 1rem, g.$dark-color)
+
+    transition: background-color 0.1s ease-in-out
+
+    &:hover, &:focus
+        // Box Model
+        background-color: g.$light-color
 
 .contact-form__button
     // Box Model
     border-radius: 6px
+    border: none
     padding: 8px
     background-color: g.$primary-color
     width: 50%
@@ -126,6 +137,11 @@
 
     cursor: pointer
 
+    transition: all 0.1s ease-in-out
+
     &:hover
         // Box Model
-        background-color: g.$hover-color_button
+        box-shadow: 10px 12px 100px g.$hover-color_button inset
+
+        // Transitions & animations
+        transform: translateY(1px)

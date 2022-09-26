@@ -38,10 +38,14 @@
     @include g.regular-font(normal, 1.2rem, g.$light-color)
     text-decoration: none
 
+    transition: all 0.1s ease-in-out
 
     &:hover
         // Box Model
-        background-color: g.$hover-color_button
+        box-shadow: 10px 12px 100px g.$hover-color_button inset
+
+        // Transitions & animations
+        transform: translateY(1px)
 
 .cover-image
     // Box Model
