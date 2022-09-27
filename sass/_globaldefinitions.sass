@@ -1,0 +1,85 @@
+@import url('./fonts.css')
+
+// Variables
+
+$primary-color: #005751
+$light-color: #f4f4f4
+$light-color-c3: #f4f4f4c3
+$light-color-f7: #f4f4f4f7
+$dark-color: #363636
+$dark-color-d9: #363636d9
+$hover-color: #676b6b
+$hover-color_navbar-element: #a7adad
+$hover-color_button: #15726c
+
+$base-font: 'NeueHaasGroteskDisp Pro', sans-serif
+
+// Mixins
+
+// Font mixins
+
+@mixin light-font($style, $size, $color)
+    font-family: 'NeueHaasGroteskDisp Pro XLt', sans-serif
+    font-style: $style
+    font-size: $size
+    font-weight: 300
+    color: $color
+
+@mixin regular-font($style, $size, $color)
+  font-family: 'NeueHaasGroteskDisp Pro Lt', sans-serif
+  font-style: $style
+  font-size: $size
+  font-weight: 300
+  color: $color
+
+@mixin mid-font($style, $size, $color)
+  font-family: 'NeueHaasGroteskDisp Pro Md', sans-serif
+  font-style: $style
+  font-size: $size
+  font-weight: 500
+  color: $color
+
+@mixin bold-font($style, $size, $color)
+  font-family: 'NeueHaasGroteskDisp Pro', sans-serif
+  font-style: $style
+  font-size: $size
+  font-weight: bold
+  color: $color
+
+@mixin blk-font($style, $size, $color)
+  font-family: 'NeueHaasGroteskDisp Pro Blk', sans-serif
+  font-style: $style
+  font-size: $size
+  font-weight: 900
+  color: $color
+
+@mixin link-style($color)
+  text-decoration: none
+  color: $color
+
+@mixin grid($columns, $areas, $gap)
+  display: grid
+  grid-template-columns: repeat($columns, 1fr)
+  grid-template-areas: $areas
+  grid-gap: $gap
+
+// Placeholders
+
+%flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+%flex-evenly-center
+  display: flex
+  justify-content: space-evenly
+  align-items: center
+
+%flex-between-center
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+%flex-column
+  display: flex
+  flex-direction: column

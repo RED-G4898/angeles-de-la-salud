@@ -1,0 +1,286 @@
+@use 'globaldefinitions' as g
+
+.footer-edge
+    // Display & position
+    position: absolute
+    top: 0
+    left:0
+    z-index: 1
+
+    // Box Model
+    width: 100%
+
+    // Others
+    overflow: hidden
+
+.footer-edge__content
+    fill: #ffffff
+    width: 118%
+    height: 56px
+
+.general-info
+    // Display & position
+    grid-area: i
+
+    @extend %flex-column
+    justify-content: center
+    gap: 8px
+
+    position: relative
+    z-index: 1
+
+.social-info
+    // Typography
+    line-height: 1.5rem
+
+.social-info__link
+    // Typography
+    @include g.regular-font(normal, 1.5rem, g.$light-color)
+    @include g.link-style(g.$light-color)
+
+
+.dev-info__link
+    // Display & position
+    position: relative
+    overflow: hidden
+
+    // Typography
+    @include g.link-style(g.$light-color)
+    @include g.bold-font(normal, 1.3rem, g.$light-color)
+
+    // Transitions & animations
+    transition: clip-path 275ms ease
+
+    &:hover
+        color: #ffffff00
+
+    &:hover::before
+        // Other
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+
+    &::before
+        // Display & position
+        position: absolute
+
+        // Typography
+        @include g.bold-font(normal, 1.3rem, #d42020)
+
+        // Transitions & animations
+        transition: clip-path 275ms ease
+
+        // Other
+        content: attr(data-content)
+        clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%)
+
+.privacy-info__link
+    // Typography
+    @include g.link-style(g.$light-color)
+
+    // Transitions & animations
+    transition: clip-path 275ms ease
+
+    &:hover
+        color: #ffffff00
+
+    &:hover::before
+        // Other
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+
+    &::before
+        // Display & position
+        position: absolute
+
+        // Typography
+        color: #00B4A8
+
+        // Transitions & animations
+        transition: clip-path 275ms ease
+
+        // Other
+        content: attr(data-content)
+        clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%)
+
+.address
+    // Display & position
+    grid-area: a
+
+    position: relative
+    z-index: 1
+
+    address
+        // Display & position
+        @extend %flex-column
+        gap: 8px
+
+        // Typography
+        text-align: center
+
+.address_content-p__link
+    // Typography
+    @include g.link-style(g.$light-color)
+
+    // Transitions & animations
+    transition: clip-path 275ms ease
+
+    &:hover
+        color: #ffffff00
+
+    &:hover::before
+        // Other
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+
+    &::before
+        // Display & position
+        position: absolute
+
+        // Typography
+        color: #00B4A8
+
+        // Transitions & animations
+        transition: clip-path 275ms ease
+
+        // Other
+        content: attr(data-content)
+        clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%)
+
+.site-map
+    // Display & position
+    grid-area: s
+
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+    position: relative
+    z-index: 1
+
+.site-map__title
+    // Box Model
+    border-bottom: solid 1.5px rgba(g.$light-color, 0.797)
+
+    // Typography
+    @include g.bold-font(normal, 1.2rem, g.$light-color)
+
+.site-map__link
+    // Typography
+    @include g.regular-font(normal, 1rem, g.$light-color)
+    @include g.link-style(g.$light-color)
+
+    // Transitions & animations
+    transition: clip-path 275ms ease
+
+    &:hover
+        color: #ffffff00
+
+    &:hover::before
+        // Other
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+
+    &::before
+        // Display & position
+        position: absolute
+
+        // Typography
+        color: #00B4A8
+
+        // Transitions & animations
+        transition: clip-path 275ms ease
+
+        // Other
+        content: attr(data-content)
+        clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%)
+
+.our-offer
+    // Display & position
+    @extend %flex-column
+    gap: 4px
+
+    // Media queries
+    // Phone
+    @media screen and (max-width: 768px)
+        // Box Model
+        width: 50%
+
+.about-us
+    // Display & position
+    @extend %flex-column
+    gap: 4px
+
+    // Media queries
+    // Phone
+    @media screen and (max-width: 768px)
+        // Box Model
+        width: 75%
+
+
+// Media queries
+
+// Phone
+
+@media screen and (max-width: 768px)
+
+    .general-info
+        // Display & position
+        align-items: center
+
+        // Box Model
+        margin-top: 40px
+        border-bottom: solid 1.5px g.$light-color
+        padding-bottom: 16px
+
+
+    .social-info
+        // Typography
+        text-align: center
+
+    .dev-info
+        // Typography
+        text-align: center
+
+    .privacy-info
+        // Typography
+        text-align: center
+
+    .address
+        // Box Model
+        border-bottom: solid 1.5px g.$light-color
+        padding-bottom: 16px
+
+
+    .site-map
+        // Display & position
+        flex-direction: column
+        align-items: center
+        gap: 16px
+
+        // Typography
+        text-align: center
+
+// Tablet
+
+@media screen and (min-width: 769px) and (max-width: 1279px)
+
+    .general-info
+        // Display & position
+        align-items: center
+
+        // Box Model
+        margin-top: 40px
+        padding-bottom: 16px
+
+    .social-info
+        // Typography
+        text-align: center
+
+    .dev-info
+        // Typography
+        text-align: center
+
+    .privacy-info
+        // Typography
+        text-align: center
+
+    .address
+        // Box Model
+        margin-top: 40px
+        padding-bottom: 16px

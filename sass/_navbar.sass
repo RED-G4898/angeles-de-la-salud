@@ -1,0 +1,189 @@
+@use 'globaldefinitions' as g
+
+.navbar
+    // Display & position
+    @extend %flex-between-center
+    flex-flow: row nowrap
+    grid-area: c
+
+    // Box Model
+    width: 100%
+
+.navbar__title
+    // Typography
+    @include g.blk-font(normal, 2rem, g.$primary-color)
+    text-decoration: none
+
+    // Media queries
+    @media screen and (max-width: 390px)
+        // Typography
+        font-size: 1.5rem
+
+.navbar-menu
+    // Display & position
+    @extend %flex-center
+    gap: 16px
+
+    // Element properties
+    list-style: none
+
+.navbar-element
+    // Display & position
+    display: inline-block
+
+    &::after
+        // Content
+        content: '|'
+
+        // Box Model
+        padding-left: 16px
+
+    &:last-child::after
+        // Content
+        content: ''
+
+        // Box Model
+        padding-left: 0
+
+.navbar-element__link
+    // Display & position
+    display: inline-block
+
+    // Typography
+    @include g.regular-font(normal, 1.2rem, g.$dark-color)
+    text-decoration: none
+
+    // Transitions & animations
+    transition: all 0.5s ease-in-out
+
+    &:hover
+        // Box Model
+        border-bottom: g.$primary-color 2px solid
+        border-radius: 0 0 8px 8px
+        background-color: g.$hover-color_navbar-element
+        padding: 2vh 12px 12px 12px
+
+        // Typography
+        color: g.$light-color
+
+        // Transitions & animations
+        transform: translateY(-16px)
+
+.navbar-element__link_active
+    // Box Model
+    border-bottom: g.$primary-color 2px solid
+
+.navbar-element__link_social
+    // Box Model
+    border-radius: 100px
+
+.navbar-dropdown
+    // Display & position
+    display: none
+
+.bi-list
+    // Typography
+    @include g.bold-font(normal, 1.5rem, g.$dark-color)
+
+.navbar-dropdown-elements
+    // Display & position
+    display: none
+
+    position: absolute
+    top: 8vh
+    z-index: 1
+
+    // Box Model
+    border-bottom: groove 3px rgba(g.$light-color, 0.797)
+    padding: 16px 0
+    background-color: g.$primary-color
+    width: 100%
+
+    // Media queries
+    // landscape phones
+    @media screen and (max-width: 768px) and (orientation: landscape)
+        // Display & position
+        top: inherit
+
+        // Box Model
+        margin-top: 2vh
+
+.navbar-dropdown-elements__link
+    // Typography
+    @include g.regular-font(normal, 1.2rem, g.$light-color)
+    text-decoration: none
+
+.navbar-dropdown:hover .navbar-dropdown-elements
+    // Display & position
+    @extend %flex-center
+    flex-flow: column wrap
+    gap: 8px
+
+    left: 0px
+
+// Media queries
+
+// Phone
+@media screen and (max-width: 768px)
+    .navbar
+        // Display & position
+        justify-content: space-around
+
+    .navbar-menu
+        // Display & position
+        display: none
+
+    .navbar-dropdown
+        // Display & position
+        display: inline-block
+
+// Tablet
+
+@media screen and (min-width: 769px) and (max-width: 1279px)
+    .navbar
+        // Display & position
+        flex-flow: column wrap
+        gap: 8px
+
+    .navbar-menu_social
+        // Display & position
+        display: none
+
+    .navbar-element__link
+        // Display & position
+        display: inline-block
+
+        // Typography
+        @include g.regular-font(normal, 1rem, g.$dark-color)
+        text-decoration: none
+
+        // Transitions & animations
+        transition: none
+
+        &:hover
+            // Box Model
+            border-bottom: 0 none
+            border-radius: 0
+            padding: 0
+            background-color: g.$hover-color
+
+            // Typography
+            color: g.$dark-color
+
+            // Transitions & animations
+            transform: none
+
+// Laptop & small monitors
+
+@media screen and (min-width: 1280px) and (max-width: 1719px)
+    .navbar__title
+        // Typography
+        @include g.blk-font(normal, 1.5rem, g.$primary-color)
+
+    .navbar-menu_social
+        // Display & position
+        display: none
+
+    .navbar-element__link
+        // Typography
+        @include g.regular-font(normal, 1rem, g.$dark-color)
