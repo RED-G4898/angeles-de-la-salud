@@ -32,24 +32,21 @@ const TOTAL_PRICE = (fasProudctPrice, competitionProductPrice) => {fasTotal+=fas
 // Control variables
 let fasTotal = 0;
 let competitionTotal = 0;
-let productsOpt = 0;
+let productsOpt;
 let menuOpt;
 
 
 // Main code
 
-// Welcome message
-alert("Bienvenido al comparador de precios de Farmacias Ángeles de la Salud");
+alert("Bienvenido al comparador de precios de Farmacias Ángeles de la Salud"); // Welcome message
 
-// First validation to known if the user want to make a comparison
-menuOpt = prompt("Desea comparar el precio de algún producto? (si/no)");
+menuOpt = prompt("Desea comparar el precio de algún producto? (si/no)"); // First validation to known if the user want to make a comparison
 
-printMenuOptErrorMsg("algún");
+printMenuOptErrorMsg("algún"); // In case of error, the program will show an error message to introduce a valid option
 
 // If the user wants the comparison, the program will ask for the products to compare
 while (menuOpt != "no") {
-    // First message to ask the user for the product to compare
-    printProductMenu("", "0");
+    printProductMenu("", productsOpt == undefined); // First message to ask the user for the product to compare by printing the products menu
 
     // Control structure to validate the product to compare
     switch (productsOpt) {
@@ -77,10 +74,12 @@ while (menuOpt != "no") {
             alert("Opción inválida");
             break;
     }
-    // Message to ask the user if he wants to compare another product
-    menuOpt = prompt("¿Desea comparar el precio de otro producto? (si/no)");
-    printMenuOptErrorMsg("otro");
-    printProductMenu("otro ", "si");
+
+    menuOpt = prompt("¿Desea comparar el precio de otro producto? (si/no)"); // Message to ask the user if he wants to compare another product
+
+    printMenuOptErrorMsg("otro"); // In case of error, the program will show an error message to introduce a valid option
+
+    printProductMenu("otro ", menuOpt === "si"); // If the user wants to compare another product, the program will ask for the product to compare by printing the correspondent menu form
 }
 
 // Validation to show the proper message to the user, depending on the usage of the comparison process and the selected products
@@ -94,10 +93,12 @@ if (fasTotal <= 0 && competitionTotal <= 0 && productsOpt != undefined){
 
 // Function definitions
 
+// Function to print a comparison message with the prices of the product selected by the user:
 function showProducts(name, price1, price2){
     alert("El precio de " + name + " en Farmacias Ángeles de la Salud es de: $" + price1 + " mxn" + "\n" + "El precio de " + name + " en la competencia es de: $" + price2 + " mxn");
 }
 
+// Function to print the total price of each shopping option:
 function showTotalPrice(){
     if (fasTotal > 0 && competitionTotal > 0){
         alert("Si compra con nosotros usted pagará un total de: $" + fasTotal + " mxn" + "\n" + "Si compra con la competencia usted pagará un total de: $" + competitionTotal + " mxn" + "\n" + "Usted ahorrará: $" + (competitionTotal - fasTotal) + " mxn");
@@ -107,15 +108,16 @@ function showTotalPrice(){
     }
 }
 
+// Function to print an error message and ask the user for a valid option until he introduces it:
 function printMenuOptErrorMsg(errorString){
     while (menuOpt != "si" && menuOpt != "no") {
-        // Error message if the user doesn't enter a valid option
         menuOpt = prompt("Opción inválida, ¿desea comparar el precio de " + errorString + " producto? (si/no)");
     }
 }
 
-function printProductMenu(menuString, compValue){
-    if (menuOpt == compValue){
+// Function to print the products menu and ask the user for the product to compare:
+function printProductMenu(menuString, expression){
+    if (expression){
         productsOpt = prompt("¿Qué " + menuString + "producto desea comparar? (Ingrese uno de los siguientes números)\n1 - Paracetamol\n2 - Amlodipino\n3 - Omeprazol\n4 - Amoxicilina");
     }
 }
