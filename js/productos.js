@@ -38,6 +38,9 @@ let menuOpt;
 alert("Bienvenido al comparador de precios de Farmacias Ángeles de la Salud");
 do {
     menuOpt = prompt("Desea comparar el precio de algún producto? (si/no)");
+    if (menuOpt != "si" && menuOpt != "no") {
+        alert("Por favor ingrese una opción válida");
+    }
 } while (menuOpt != "no" && menuOpt != "si");
 
 while (menuOpt != "no") {
@@ -83,9 +86,9 @@ while (menuOpt != "no") {
     } while (menuOpt != "si" && menuOpt != "no");
 }
 
-if (fasTotal <= 0 && competitionTotal <= 0){
+if (fasTotal <= 0 && competitionTotal <= 0 && productsOpt != undefined){
     showTotalPrice();
-}else{
+}else if (productsOpt == undefined || (fasTotal > 0 && competitionTotal > 0)){
     alert("Gracias por usar el comparador de precios de Farmacias Ángeles de la Salud");
 }
 
