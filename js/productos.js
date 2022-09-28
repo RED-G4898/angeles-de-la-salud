@@ -25,13 +25,16 @@ const COMPETITION_OMEPRAZOLE_PRICE = 158;
 const FAS_AMOXICILLIN_PRICE = 39;
 const COMPETITION_AMOXICILLIN_PRICE = 45;
 
+const TOTAL_PRICE = (fasProudctPrice, competitionProductPrice) => {fasTotal+=fasProudctPrice; competitionTotal+=competitionProductPrice;}
+
 // Variables declaration and initialization
 
 // Control variables
 let fasTotal = 0;
 let competitionTotal = 0;
-let productsOpt;
+let productsOpt = 0;
 let menuOpt;
+
 
 // Main code
 
@@ -39,43 +42,34 @@ let menuOpt;
 alert("Bienvenido al comparador de precios de Farmacias Ángeles de la Salud");
 
 // First validation to known if the user want to make a comparison
-do {
-    menuOpt = prompt("Desea comparar el precio de algún producto? (si/no)");
-    if (menuOpt != "si" && menuOpt != "no") {
-        alert("Por favor ingrese una opción válida");
-    }
-} while (menuOpt != "no" && menuOpt != "si");
+menuOpt = prompt("Desea comparar el precio de algún producto? (si/no)");
+
+printMenuOptErrorMsg("algún");
 
 // If the user wants the comparison, the program will ask for the products to compare
 while (menuOpt != "no") {
     // First message to ask the user for the product to compare
-    if (productsOpt == undefined){
-        productsOpt = prompt("¿Qué producto desea comparar? (Ingrese uno de los siguientes números)\n1 - Paracetamol\n2 - Amlodipino\n3 - Omeprazol\n4 - Amoxicilina");
-    }
+    printProductMenu("", "0");
 
     // Control structure to validate the product to compare
     switch (productsOpt) {
         case "1":
-            fasTotal+=FAS_PARACETAMOL_PRICE;
-            competitionTotal+=COMPETITION_PARACETAMOL_PRICE;
+            TOTAL_PRICE(FAS_PARACETAMOL_PRICE, COMPETITION_PARACETAMOL_PRICE);
             showProducts("Paracetamol", FAS_PARACETAMOL_PRICE, COMPETITION_PARACETAMOL_PRICE);
             showTotalPrice();
             break;
         case "2":
-            fasTotal+=FAS_AMLODIPINE_PRICE;
-            competitionTotal+=COMPETITION_AMLODIPINE_PRICE;
+            TOTAL_PRICE(FAS_AMLODIPINE_PRICE, COMPETITION_AMLODIPINE_PRICE);
             showProducts("Amlodipino", FAS_AMLODIPINE_PRICE, COMPETITION_AMLODIPINE_PRICE);
             showTotalPrice();
             break;
         case "3":
-            fasTotal+=FAS_OMEPRAZOLE_PRICE;
-            competitionTotal+=COMPETITION_OMEPRAZOLE_PRICE;
+            TOTAL_PRICE(FAS_OMEPRAZOLE_PRICE, COMPETITION_OMEPRAZOLE_PRICE);
             showProducts("Omeprazol", FAS_OMEPRAZOLE_PRICE, COMPETITION_OMEPRAZOLE_PRICE);
             showTotalPrice();
             break;
         case "4":
-            fasTotal+=FAS_AMOXICILLIN_PRICE;
-            competitionTotal+=COMPETITION_AMOXICILLIN_PRICE;
+            TOTAL_PRICE(FAS_AMOXICILLIN_PRICE, COMPETITION_AMOXICILLIN_PRICE);
             showProducts("Amoxicilina", FAS_AMOXICILLIN_PRICE, COMPETITION_AMOXICILLIN_PRICE);
             showTotalPrice();
             break;
@@ -84,16 +78,9 @@ while (menuOpt != "no") {
             break;
     }
     // Message to ask the user if he wants to compare another product
-    menuOpt = prompt("¿Desea comparar otro producto? (si/no)");
-    do {
-        if (menuOpt === "si"){
-            // Second message to ask the user for the product to compare
-            productsOpt = prompt("¿Qué otro producto desea comparar? (Ingrese uno de los siguientes números)\n1 - Paracetamol\n2 - Amlodipino\n3 - Omeprazol\n4 - Amoxicilina");
-        } else if (menuOpt != "si" && menuOpt != "no"){
-            // Error message if the user doesn't enter a valid option
-            menuOpt = prompt("Opción inválida, ¿desea comparar otro producto? (si/no)");
-        }
-    } while (menuOpt != "si" && menuOpt != "no");
+    menuOpt = prompt("¿Desea comparar el precio de otro producto? (si/no)");
+    printMenuOptErrorMsg("otro");
+    printProductMenu("otro ", "si");
 }
 
 // Validation to show the proper message to the user, depending on the usage of the comparison process and the selected products
@@ -117,5 +104,18 @@ function showTotalPrice(){
     }
     else {
         alert("No ha seleccionado ningún producto, gracias por usar el comparador de precios de Farmacias Ángeles de la Salud");
+    }
+}
+
+function printMenuOptErrorMsg(errorString){
+    while (menuOpt != "si" && menuOpt != "no") {
+        // Error message if the user doesn't enter a valid option
+        menuOpt = prompt("Opción inválida, ¿desea comparar el precio de " + errorString + " producto? (si/no)");
+    }
+}
+
+function printProductMenu(menuString, compValue){
+    if (menuOpt == compValue){
+        productsOpt = prompt("¿Qué " + menuString + "producto desea comparar? (Ingrese uno de los siguientes números)\n1 - Paracetamol\n2 - Amlodipino\n3 - Omeprazol\n4 - Amoxicilina");
     }
 }
