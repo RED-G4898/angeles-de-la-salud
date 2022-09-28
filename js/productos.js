@@ -25,6 +25,7 @@ const COMPETITION_OMEPRAZOLE_PRICE = 158;
 const FAS_AMOXICILLIN_PRICE = 39;
 const COMPETITION_AMOXICILLIN_PRICE = 45;
 
+// Arrow function to calc the total price of both shopping options:
 const TOTAL_PRICE = (fasProudctPrice, competitionProductPrice) => {fasTotal+=fasProudctPrice; competitionTotal+=competitionProductPrice;}
 
 // Variables declaration and initialization
