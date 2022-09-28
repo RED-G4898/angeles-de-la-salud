@@ -37,6 +37,10 @@ let menuOpt;
 
 alert("Bienvenido al comparador de precios de Farmacias Ángeles de la Salud");
 do {
+    menuOpt = prompt("Desea comparar el precio de algún producto? (si/no)");
+} while (menuOpt != "no" && menuOpt != "si");
+
+while (menuOpt != "no") {
     if (productsOpt == undefined){
         productsOpt = prompt("¿Qué producto desea comparar? (Ingrese uno de los siguientes números)\n1 - Paracetamol\n2 - Amlodipino\n3 - Omeprazol\n4 - Amoxicilina");
     }
@@ -77,9 +81,13 @@ do {
             menuOpt = prompt("Opción inválida, ¿desea comparar otro producto? (si/no)");
         }
     } while (menuOpt != "si" && menuOpt != "no");
-} while (menuOpt != "no");
+}
 
-showTotalPrice();
+if (fasTotal <= 0 && competitionTotal <= 0){
+    showTotalPrice();
+}else{
+    alert("Gracias por usar el comparador de precios de Farmacias Ángeles de la Salud");
+}
 
 // EOF
 
@@ -92,9 +100,6 @@ function showProducts(name, price1, price2){
 function showTotalPrice(){
     if (fasTotal > 0 && competitionTotal > 0){
         alert("Si compra con nosotros usted pagará un total de: $" + fasTotal + " mxn" + "\n" + "Si compra con la competencia usted pagará un total de: $" + competitionTotal + " mxn" + "\n" + "Usted ahorrará: $" + (competitionTotal - fasTotal) + " mxn");
-        if (menuOpt === "no"){
-            alert("Gracias por utilizar nuestro comparador de precios");
-        }
     }
     else {
         alert("No ha seleccionado ningún producto, gracias por usar el comparador de precios de Farmacias Ángeles de la Salud");
