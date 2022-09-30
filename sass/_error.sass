@@ -1,0 +1,38 @@
+@use 'globaldefinitions' as g
+
+.error
+    // Display & position
+    @extend %flex-center
+    @extend %flex-column
+    gap: 32px
+
+    // Box Model
+    margin: 0 5%
+
+.error__code
+    // Typography
+    text-align: center
+
+.error__desc
+    // Typography
+    @include g.bold-font(normal, 1.5rem, g.$dark-color)
+    text-align: center
+
+.error__fix
+    // Typography
+    @include g.bold-font(normal, 1.25rem, rgba(g.$dark-color, 0.75))
+    text-align: center
+
+.error-img
+// Box Model
+    width: 30vh
+
+
+.error-img__content
+    // Box Model
+    width: 100%
+    height: 100%
+
+    // Visuals
+    object-fit: cover
+    object-position: center top
