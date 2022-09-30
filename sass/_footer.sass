@@ -34,9 +34,28 @@
     line-height: 1.5rem
 
 .social-info__link
+    // Display & position
+    display: inline-block
+
+    // Box Model
+    margin-top: 8px
+    margin-right: 16px
+
     // Typography
-    @include g.regular-font(normal, 1.5rem, g.$light-color)
+    @include g.regular-font(normal, 2.5rem, g.$light-color)
     @include g.link-style(g.$light-color)
+
+
+.social-info__link_fb
+    // Typography
+    color: #4267B2
+
+.social-info__link_wa
+    // Box Model
+    margin-right: 0
+
+    // Typography
+    color: #25D366
 
 
 .dev-info__link
