@@ -46,7 +46,7 @@ menuOpt = prompt("Desea comparar el precio de algún producto? (si/no)"); // Fir
 printMenuOptErrorMsg("algún"); // In case of error, the program will show an error message to introduce a valid option
 
 // If the user wants the comparison, the program will ask for the products to compare
-while (menuOpt != "no") {
+while (menuOpt != "no" && menuOpt != null) {
     printProductMenu("", productsOpt == undefined); // First message to ask the user for the product to compare by printing the products menu
 
     // Control structure to validate the product to compare
