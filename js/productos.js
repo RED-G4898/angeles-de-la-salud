@@ -12,21 +12,7 @@
 
 // Constant declaration and initialization
 
-// Products
-const FAS_PARACETAMOL_PRICE = 12;
-const COMPETITION_PARACETAMOL_PRICE = 30;
-
-const FAS_AMLODIPINE_PRICE = 30;
-const COMPETITION_AMLODIPINE_PRICE = 45;
-
-const FAS_OMEPRAZOLE_PRICE = 105;
-const COMPETITION_OMEPRAZOLE_PRICE = 158;
-
-const FAS_AMOXICILLIN_PRICE = 39;
-const COMPETITION_AMOXICILLIN_PRICE = 45;
-
 // Arrow function to calc the total price of both shopping options:
-const TOTAL_PRICE = (fasProudctPrice, competitionProductPrice) => {fasTotal+=fasProudctPrice; competitionTotal+=competitionProductPrice;}
 
 // Variables declaration and initialization
 
@@ -47,11 +33,46 @@ class Product{
     showPrices(){
         alert(`Si usted compra "${this.name}" en Farmacias Ángeles de la Salud pagará $${this.fasPrice}.\nSi usted compra en otras farmacias pagaría $${this.competitionPrice}."`);
     }
+}
 
+class Cart{
+    constructor(){
+        this.products = [];
+    }
+
+    addProduct(product){
+        this.products.push(product);
+    }
+
+    cartTotalPrice(){
+        this.products.forEach(product => {
+            this.fasTotalPrice += product.fasPrice;
+            this.competitionTotalPrice += product.competitionPrice;
+        });
+    }
+
+    showCart(){
+        let cartString;
+        this.products.forEach((product, index) => {
+            cartString += `${index}: ${product.name} \t $${product.fasPrice} \t $${product.competitionPrice}`;
+        });
+
+        this.cartTotalPrice();
+
+        alert("Producto\tPrecio FAS\tPrecio Competencia\n" + cartString + "\n\nTotal FAS: $" + fasTotalPrice + "\nTotal Competencia: $" + competitionTotalPrice);
+    }
 }
 
 
 // Main code
+
+const paracetamol = new Product("Paracetamol", 20, 30);
+const amlodipine = new Product("Amlodipino", 50, 60);
+const omeprazole = new Product("Omeprazol", 100, 120);
+const amoxicillin = new Product("Amoxicilina", 80, 100);
+
+const cart = new Cart();
+
 
 alert("Bienvenido al comparador de precios de Farmacias Ángeles de la Salud"); // Welcome message
 
@@ -66,24 +87,20 @@ while (menuOpt != "no" && menuOpt != null) {
     // Control structure to validate the product to compare
     switch (productsOpt) {
         case "1":
-            TOTAL_PRICE(FAS_PARACETAMOL_PRICE, COMPETITION_PARACETAMOL_PRICE);
-            showProducts("Paracetamol", FAS_PARACETAMOL_PRICE, COMPETITION_PARACETAMOL_PRICE);
-            showTotalPrice();
+            cart.addProduct(paracetamol);
+            paracetamol.showPrices();
             break;
         case "2":
-            TOTAL_PRICE(FAS_AMLODIPINE_PRICE, COMPETITION_AMLODIPINE_PRICE);
-            showProducts("Amlodipino", FAS_AMLODIPINE_PRICE, COMPETITION_AMLODIPINE_PRICE);
-            showTotalPrice();
+            cart.addProduct(amlodipine);
+            amlodipine.showPrices();
             break;
         case "3":
-            TOTAL_PRICE(FAS_OMEPRAZOLE_PRICE, COMPETITION_OMEPRAZOLE_PRICE);
-            showProducts("Omeprazol", FAS_OMEPRAZOLE_PRICE, COMPETITION_OMEPRAZOLE_PRICE);
-            showTotalPrice();
+            cart.addProduct(omeprazole);
+            omeprazole.showPrices();
             break;
         case "4":
-            TOTAL_PRICE(FAS_AMOXICILLIN_PRICE, COMPETITION_AMOXICILLIN_PRICE);
-            showProducts("Amoxicilina", FAS_AMOXICILLIN_PRICE, COMPETITION_AMOXICILLIN_PRICE);
-            showTotalPrice();
+            cart.addProduct(amoxicillin);
+            amoxicillin.showPrices();
             break;
         default:
             alert("Opción inválida");
@@ -99,7 +116,7 @@ while (menuOpt != "no" && menuOpt != null) {
 
 // Validation to show the proper message to the user, depending on the usage of the comparison process and the selected products
 if (fasTotal <= 0 && competitionTotal <= 0 && productsOpt != undefined){
-    showTotalPrice();
+    cart.showCart();
 }else if (productsOpt == undefined || (fasTotal > 0 && competitionTotal > 0)){
     alert("Gracias por usar el comparador de precios de Farmacias Ángeles de la Salud");
 }
