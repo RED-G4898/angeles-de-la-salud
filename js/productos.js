@@ -36,6 +36,20 @@ let competitionTotal = 0;
 let productsOpt;
 let menuOpt;
 
+class Product{
+    constructor(name, fasPrice, competitionPrice){
+        this.name = name;
+        this.fasPrice = fasPrice;
+        this.competitionPrice = competitionPrice;
+    }
+
+    // Method to show the product price in both pharmacies
+    showPrices(){
+        alert(`Si usted compra "${this.name}" en Farmacias Ángeles de la Salud pagará $${this.fasPrice}.\nSi usted compra en otras farmacias pagaría $${this.competitionPrice}."`);
+    }
+
+}
+
 
 // Main code
 
