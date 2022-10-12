@@ -38,6 +38,9 @@ class Product{
 class Cart{
     constructor(){
         this.products = [];
+        this.fasTotalPrice = 0;
+        this.competitionTotalPrice = 0;
+        this.cartString = "";
     }
 
     addProduct(product){
@@ -52,14 +55,13 @@ class Cart{
     }
 
     showCart(){
-        let cartString;
         this.products.forEach((product, index) => {
-            cartString += `${index}: ${product.name} \t $${product.fasPrice} \t $${product.competitionPrice}`;
+            this.cartString += `${index + 1}: ${product.name}     $${product.fasPrice}             $${product.competitionPrice}            \n`;
         });
 
         this.cartTotalPrice();
 
-        alert("Producto\tPrecio FAS\tPrecio Competencia\n" + cartString + "\n\nTotal FAS: $" + fasTotalPrice + "\nTotal Competencia: $" + competitionTotalPrice);
+        alert("Producto         Precio FAS    Precio Competencia\n" + this.cartString + "\n\nTotal FAS: $" + this.fasTotalPrice + "\nTotal Competencia: $" + this.competitionTotalPrice + "\nAhorrás: $" + (this.competitionTotalPrice - this.fasTotalPrice));
     }
 }
 
@@ -115,7 +117,7 @@ while (menuOpt != "no" && menuOpt != null) {
 }
 
 // Validation to show the proper message to the user, depending on the usage of the comparison process and the selected products
-if (fasTotal <= 0 && competitionTotal <= 0 && productsOpt != undefined){
+if (cart.fasTotalPrice <= 0 && cart.competitionTotalPrice <= 0 && productsOpt != undefined){
     cart.showCart();
 }else if (productsOpt == undefined || (fasTotal > 0 && competitionTotal > 0)){
     alert("Gracias por usar el comparador de precios de Farmacias Ángeles de la Salud");
