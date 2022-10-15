@@ -18,7 +18,6 @@ class Product{
         this.fasPrice = fasPrice;
         this.competitionPrice = competitionPrice;
     }
-
     comparePrices(){
         alert(`El precio de "${this.name.charAt(0).toUpperCase() + this.name.slice(1)}" en Farmacias Ángeles de la Salud es de $${this.fasPrice}.\nEn la competencia el precio es de $${this.competitionPrice}.\n\nSi compra en Farmacias Ángeles de la Salud usted ahorra $${calcSavings(this.fasPrice,this.competitionPrice)}.`);
     }
@@ -42,25 +41,15 @@ const omeprazole = new Product("omeprazol", 150, 180);
 const amoxicillin = new Product("amoxicilina", 200, 240);
 const ibuprofen = new Product("ibuprofeno", 250, 300);
 
-/* stock.availableProducts = {
-    paracetamol: paracetamol,
-    amlodipine: amlodipine,
-    omeprazole: omeprazole,
-    amoxicillin: amoxicillin,
-    ibuprofen: ibuprofen,
-} */
-
 stock.availableProducts.push(paracetamol, amlodipine, omeprazole, amoxicillin, ibuprofen);
+
+const availableProductsList = getElementList(stock.availableProducts, "-", false);
 
 const availableProductsNames = getArrayElementsNames(stock.availableProducts);
 
-const availableProductsList = getArrayElementsNames(stock.availableProducts).sort().join("\n");
-
 let cartProductsNames;
 
-const menuOptions = ["comparar", "carrito", "regresar", "salir"];
 let menuOpt;
-let productOpt;
 
 do {
     menuOpt = prompt("Ingrese \"comparar\" para ver la lista de productos, \"carrito\" para ver los productos seleccionados o \"salir\" para cerrar el comparador de precios.");
@@ -103,13 +92,24 @@ function calcCartTotalPrices(){
     return total;
 }
 
+function getElementList(array, listBullet, includePrice){
+    let list = "";
+    array.forEach(element => {
+        if (includePrice){
+            list += `${listBullet} ${element.name.charAt(0).toUpperCase() + element.name.slice(1)} $${element.fasPrice} $${element.competitionPrice}\n`;
+        } else {
+            list += `${listBullet} ${element.name.charAt(0).toUpperCase() + element.name.slice(1)}\n`;
+        }
+    });
+    return list;
+}
+
 function showCartDetails(){
     let total = calcCartTotalPrices();
     cart.fasTotal = total[0];
     cart.competitionTotal = total[1];
-    cartProductsNames = getArrayElementsNames(cart.products);
-    cart.productList = cartProductsNames.join("\n");
+    cart.productList = getElementList(cart.products, "•", true);
     cart.savings = calcSavings(cart.fasTotal, cart.competitionTotal);
 
-    alert(`Los productos seleccionados son:\n${cart.productList}\nEl total a pagar en Farmacias Ángeles de la Salud es de $${cart.fasTotal}.\nEl total a pagar en la competencia es de $${cart.competitionTotal}.\n\nSi compra en Farmacias Ángeles de la Salud usted ahorra $${cart.savings}.`);
+    alert(`Producto     Precio FAS    Precio Competencia\n${cart.productList}\nEl total a pagar en Farmacias Ángeles de la Salud es de $${cart.fasTotal}.\nEl total a pagar en la competencia es de $${cart.competitionTotal}.\n\nSi compra en Farmacias Ángeles de la Salud usted ahorra $${cart.savings}.`);
 }
