@@ -105,10 +105,10 @@ function calcCartTotalPrices(){
 
 function showCartDetails(){
     let total = calcCartTotalPrices();
-    cartProductsNames = getArrayElementsNames(cart.products);
-    cart.productList = cartProductsNames.join("\n");
     cart.fasTotal = total[0];
     cart.competitionTotal = total[1];
+    cartProductsNames = getArrayElementsNames(cart.products);
+    cart.productList = cartProductsNames.join("\n");
     cart.savings = calcSavings(cart.fasTotal, cart.competitionTotal);
 
     alert(`Los productos seleccionados son:\n${cart.productList}\nEl total a pagar en Farmacias Ángeles de la Salud es de $${cart.fasTotal}.\nEl total a pagar en la competencia es de $${cart.competitionTotal}.\n\nSi compra en Farmacias Ángeles de la Salud usted ahorra $${cart.savings}.`);
