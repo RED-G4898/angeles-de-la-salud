@@ -1,9 +1,8 @@
 # Ángeles de la Salud
 ## Notas IMPORTANTES
 
-El presente repositorio es de carácter temporal y corresponde a un proyecto realizado para Farmacias Ángeles de la Salud, el mismo, pertenece al proyecto final del curso Desarrollo Web, y se piensa continuar el desarrollo del mismo con el presente curso de JavaScript, el repositorio original y permanente continuara utilizándose hasta que la etapa de revisión de proyectos finales del curso de Desarrollo Web concluya.
+La presente rama del repositorio corresponde a la rama de pruebas del mismo, aquí, se ponen a prueba todas las actualizaciones a aplicar en el sitio principal antes de ser publicadas.
 
-El enlace de acceso al repositorio original es: https://github.com/RED-G4898/angeles-de-la-salud
+El sitio principal puede ser accedido desde: https://www.angelesdelasalud.com.mx/
 
-## Preentregas
-### Preentrega 1 de Proyecto Final: https://school.redg.dev/pages/coderhouse/javascript/angeles-de-la-salud/pages/productos.html
+El sitio de pruebas puede ser accedido desde: https://school.redg.dev/pages/coderhouse/angeles-de-la-salud/
