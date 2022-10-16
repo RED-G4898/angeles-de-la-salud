@@ -55,11 +55,11 @@ let menuOpt; // Control variable to store the user's choice in the main menu.
 
 // Main code
 do {
-    menuOpt = prompt("Ingrese \"comparar\" para ver la lista de productos, \"carrito\" para ver los productos seleccionados o \"salir\" para cerrar el comparador de precios."); // Ask the user what he wants to do
+    menuOpt = prompt("Ingrese \"comparar\" para ver la lista de productos, \"carrito\" para ver los productos seleccionados o \"salir\" para cerrar el comparador de precios.").toLowerCase(); // Ask the user what he wants to do
     switch (menuOpt){
         case "comparar": // If the user wants to compare prices
             do {
-                menuOpt = prompt("Ingrese el nombre del producto que desea comparar o \"regresar\" para volver al menú anterior\n" + availableProductsList); // Ask the user what product he wants to compare
+                menuOpt = prompt("Ingrese el nombre del producto que desea comparar o \"regresar\" para volver al menú anterior\n" + availableProductsList).toLowerCase(); // Ask the user what product he wants to compare
                 if (isAvailableElement(menuOpt, availableProductsNames)){
                     cart.products.push(stock.availableProducts[availableProductsNames.indexOf(menuOpt)]); // If the product is available add the product to the cart using the product names and available products arrays.
                     cartProductsNames = getArrayElementsNames(cart.products); // Obtain the names of products in the cart to let the program know what products are in the cart.
