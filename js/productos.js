@@ -64,7 +64,7 @@ do {
                     cart.products.push(stock.availableProducts[availableProductsNames.indexOf(menuOpt)]); // If the product is available add the product to the cart using the product names and available products arrays.
                     cartProductsNames = getArrayElementsNames(cart.products); // Obtain the names of products in the cart to let the program know what products are in the cart.
                     cart.products[cartProductsNames.indexOf(menuOpt)].comparePrices(); // Show the price comparison using the product names and cart products arrays.
-                } else if (menuOpt != "regresar"){
+                } else if (menuOpt !== "regresar"){
                     alert("El producto ingresado no se encuentra en el inventario o se ingreso un dato incorrecto."); // If the product is not available and no valid option was selected, show an error message.
                 }
             } while (isAvailableElement(menuOpt, availableProductsNames) || menuOpt !== "regresar"); // Repeat the process until the user writes "regresar"
