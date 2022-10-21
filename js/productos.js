@@ -6,9 +6,6 @@
  *
  * The whole code has been written and developed by RED with <3 for Farmacias Ángeles de la Salud as
  * part of a project from a Coderhouse course.
- *
- * TODO: El manejo del carrito se debe incluir dentro de las funciones que interactuan con el DOM.
- *
  */
 
 // Definition of arrow functions
@@ -17,8 +14,7 @@ const isAvailableElement = (element, array) => array.includes(element); // Check
 const calcSavings = (total1, total2) => total2 - total1; // Calc the savings by resting two totals
 
 class Product{ // Definiction of Product class
-    constructor(id, name, fasPrice, competitionPrice){
-        this.id = id;
+    constructor(name, fasPrice, competitionPrice){
         this.name = name;
         this.fasPrice = fasPrice;
         this.competitionPrice = competitionPrice;
@@ -94,7 +90,7 @@ function calcCartTotalPrices(){ // Calc the total price of the products in the c
     let total = [0, 0]; // Both totals are stored in an array
 
     for (const product of cart.products) {
-        total[0] = total[0] + product.fasPrice;
+        total[0] += product.fasPrice;
         total[1] += product.competitionPrice;
     }
     return total;
