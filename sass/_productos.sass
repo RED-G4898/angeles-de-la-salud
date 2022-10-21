@@ -9,7 +9,7 @@
     // Display & position
     @extend %flex-column
     align-items: center
-    gap: 4px
+    gap: 32px
 
 .productos-main__title
     // Display & position
@@ -20,9 +20,6 @@
     display: flex
     flex-direction: row
     gap: 32px
-
-    // Box Model
-    margin-top: 48px
 
 .product-offer-card
     // Box Model
@@ -137,6 +134,54 @@
 
     // Typography
     color: g.$light-color
+
+.available-products
+    // Box Model
+    border-radius: 16px
+    width: 100%
+
+    background-color: g.$light-color
+
+.available-products-band
+    @extend %flex-between-center
+
+    height: 4vh
+
+.available-products-band__title
+    margin-left: 8px
+
+.available-products-band-button
+    width: 8%
+
+    text-align: center
+    font-size: 1.5rem
+
+.available-products-cards
+    margin: 16px 16px
+
+
+.button
+    // Display & position
+    border-radius: 6px
+    padding: 8px 8px
+    background-color: g.$primary-color
+    width: fit-content
+
+    position: relative
+    z-index: 1
+
+    // Typography
+    @include g.regular-font(normal, 1.2rem, g.$light-color)
+    text-decoration: none
+
+    transition: all 0.1s ease-in-out
+
+    &:hover
+        // Box Model
+        box-shadow: 10px 12px 100px g.$hover-color_button inset
+
+        // Transitions & animations
+        transform: translateY(1px)
 
 // Media queries
 
