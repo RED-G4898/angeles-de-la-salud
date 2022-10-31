@@ -18,37 +18,6 @@ const getArrayElementsNames = array => array.map(element => element.name); // Ob
 const isAvailableElement = (element, array) => array.includes(element); // Check if the specified element is in the specified array
 const calcSavings = (total1, total2) => total2 - total1; // Calc the savings by resting two totals
 
-class Product{ // Definiction of Product class
-    constructor(name, fasPrice, competitionPrice){
-        this.name = name;
-        this.fasPrice = fasPrice;
-        this.competitionPrice = competitionPrice;
-    }
-    comparePrices(){
-        alert(`El precio de "${this.name.charAt(0).toUpperCase() + this.name.slice(1)}" en Farmacias Ángeles de la Salud es de $${this.fasPrice}.\nEn la competencia el precio es de $${this.competitionPrice}.\n\nSi compra en Farmacias Ángeles de la Salud usted ahorra $${calcSavings(this.fasPrice,this.competitionPrice)}.`);
-    }
-}
-
-class ProductOfferCard{
-    constructor(cardTitle, cardDescription, cardImg) {
-        this.cardTitle = cardTitle;
-        this.cardDescription = cardDescription;
-        this.cardImg = cardImg;
-    }
-}
-
-const cart = { // Store products selected by the user and other data related to prices and products.
-    products: [],
-    fasTotal: 0,
-    competitionTotal: 0,
-    savings: 0,
-    productList: "",
-}
-
-const stock = { // Helps to check if a product is available to be added to the cart.
-    availableProducts: [],
-}
-
 const productOfferCards = [(new ProductOfferCard("Plantas Medicinales", "Ponemos a tu disposición un amplio catálogo de plantas medicinales que podrás adquirir bajo pedido.", "./../assets/products/herbs.jpg")),
                            (new ProductOfferCard("Cápsulas", "Plantas, cortezas y vegetales son algunos de los artículos que podrás encontrar como encapsulados y para complementar tus dietas, o distintos tratamientos.", "./../assets/products/herb-capsules.jpg")),
                            (new ProductOfferCard("Extractos de Plantas", "Además de encapsulados y plantas en crudo, también tenemos para ti extractos de plantas que puedes tomar en disoluciones con alcohol o agua.", "./../assets/products/herb-extract.jpg")),
@@ -76,12 +45,16 @@ let menuOpt; // Control variable to store the user's choice in the main menu.
 insertOfferCardHTML(PRODUCT_OFFER[0], productOfferCards.slice(0,3));
 insertOfferCardHTML(PRODUCT_OFFER[1], productOfferCards.slice(3));
 
+insertProductCardHTML(AVAILABLE_PRODUCTS_LIST[0], stock.availableProducts);
+
+
+
 AVAILABLE_PRODUCTS_BUTTON[0].onclick = () => {
-    if (AVAILABLE_PRODUCTS_LIST[0].getAttribute("hidden") === "") {
-        AVAILABLE_PRODUCTS_LIST[0].removeAttribute("hidden");
+    if (AVAILABLE_PRODUCTS_LIST[0].getAttribute("class") === "available-products-cards available-products-cards_hidden") {
+        AVAILABLE_PRODUCTS_LIST[0].setAttribute("class", "available-products-cards");
         AVAILABLE_PRODUCTS_BUTTON_ICON[0].setAttribute("class", "available-products-band-button__icon bi bi-caret-up-fill");
     } else {
-        AVAILABLE_PRODUCTS_LIST[0].setAttribute("hidden", "");
+        AVAILABLE_PRODUCTS_LIST[0].setAttribute("class", "available-products-cards available-products-cards_hidden");
         AVAILABLE_PRODUCTS_BUTTON_ICON[0].setAttribute("class", "available-products-band-button__icon bi bi-caret-down-fill");
     }
 }
@@ -151,23 +124,14 @@ function showCartDetails(){ // Show the details of the products in the cart
     alert(`Producto     Precio FAS    Precio Competencia\n${cart.productList}\nEl total a pagar en Farmacias Ángeles de la Salud es de $${cart.fasTotal}.\nEl total a pagar en la competencia es de $${cart.competitionTotal}.\n\nSi compra en Farmacias Ángeles de la Salud usted ahorra $${cart.savings}.`);
 }
 
-function insertOfferCardHTML(htmlElement, array, html){
+function insertOfferCardHTML(htmlElement, array){
     for (const element of array) {
-        htmlElement.innerHTML += `<article class="product-offer-card">
-        <section class="flip">
-            <!-- Front part of flip card -->
-            <section class="flip__front">
-                <img src="${element.cardImg}">
-                <h4>${element.cardTitle}</h4>
-            </section>
-            <!-- Back part of flip card -->
-            <section class="flip__back">
-                <img src="${element.cardImg}">
-                <p class="txt-center">
-                    ${element.cardDescription}
-                </p>
-            </section>
-        </section>
-        </article>`;
+        htmlElement.innerHTML += productOfferCardTemplate(element.cardImg, element.cardTitle, element.cardDescription);
+    }
+}
+
+function insertProductCardHTML(htmlElement, array){
+    for (const element of array) {
+        htmlElement.innerHTML += productCardTemplate(element.img, element.name, element.description, element.fasPrice, element.competitionPrice);
     }
 }
