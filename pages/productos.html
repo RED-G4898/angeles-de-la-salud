@@ -64,20 +64,9 @@
                 complementar tu día a día con los beneficios de la naturaleza y la herbolaria mexicana.
             </p>
             <!-- Section with flip cards with prodduct offer -->
-            <section class="product-offer">
+            <section id="product-offer-naturales" class="product-offer">
                 <!-- Cards of product offer -->
             </section>
-            <article class="available-products">
-                <section class="available-products-band">
-                    <h4 class="available-products-band__title">Conoce nuestros productos naturales</h4>
-                    <div class="available-products-band-button">
-                        <i class="available-products-band-button__icon bi bi-caret-down-fill"></i>
-                    </div>
-                </section>
-                <section class="available-products-cards available-products-cards_hidden">
-                    <!-- Cards of products -->
-                </section>
-            </article>
         </article>
         <article class="products">
             <!-- Generic products section -->
@@ -87,9 +76,20 @@
                 El medico te prescribió muchos medicamentos y no sabes dónde comprarlos, ven con nosotros, tenemos los mejores productos a los mejores precios.
             </p>
             <!-- Section with flip cards with prodduct offer -->
-            <section class="product-offer">
+            <section class="product-offer-genericos">
                 <!-- Cards of product offer -->
             </section>
+            <article class="available-products">
+                <section class="available-products-band">
+                    <h4 class="available-products-band__title">Conoce nuestros medicamentos</h4>
+                    <div id="available-genericos-button" class="available-products-band-button">
+                        <i class="available-products-band-button__icon bi bi-caret-down-fill"></i>
+                    </div>
+                </section>
+                <section id="available-genericos" class="available-products-cards available-products-cards_hidden">
+                    <!-- Cards of products -->
+                </section>
+            </article>
         </article>
 	</main>
     <!-- Footer -->
@@ -139,6 +139,6 @@
             </section>
         </article>
     </footer>
-    <script src="./../js/Productos.js"></script>
+    <script type="module" src="./../js/Productos.js"></script>
 </body>
 </html>
