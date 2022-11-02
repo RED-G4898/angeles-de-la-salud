@@ -24,3 +24,5 @@ genericosProductCardButton.onclick = () => {
         genericosProductCardSection.classList.add("available-products-cards_hidden");
     }
 }
+
+/* genericosProductCardButton.onclick = () => {toggleClass("available-genericos", "available-products-cards_hidden")}; */

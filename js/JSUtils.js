@@ -1,45 +1,25 @@
-const addClass = (element, className) => {
-    element = document.getElementById(element);
-    if (element.classList) {
-        element.classList.add(className);
-    } else {
-        element.className += ' ' + className;
-    }
+const addClass = (elementID, className) => {
+    let element = document.getElementById(elementID);
+    element.classList.add(className);
 };
 
-const removeClass = (element, className) => {
-    element = document.getElementById(element);
-    if (element.classList) {
-        element.classList.remove(className);
-    } else {
-        element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-    }
+const removeClass = (elementID, className) => {
+    let element = document.getElementById(elementID);
+    element.classList.remove(className);
 };
 
-const toggleClass = (element, className) => {
-    element = document.getElementById(element);
-    if (element.classList) {
-        element.classList.toggle(className);
-    } else {
-        var classes = element.className.split(' ');
-        var existingIndex = classes.indexOf(className);
 
-        if (existingIndex >= 0)
-            classes.splice(existingIndex, 1);
-        else
-            classes.push(className);
-
-        element.className = classes.join(' ');
-    }
+const hasClass = (elementID, className) => {
+    let element = document.getElementById(elementID);
+    element.classList.contains(className);
 }
 
-const hasClass = (element, className) => {
-    element = document.getElementById(element);
-    if (element.classList) {
-        return element.classList.contains(className);
-    } else {
-        return new RegExp('(^| )' + className + '( |$)', 'gi').test(element.className);
+const toggleClass = (elementID, className) => {
+    if (hasClass(elementID, className)) {
+        removeClass(elementID, className);
+        return;
     }
+    addClass(elementID, className);
 }
 
 const insertHtml = (element, html) => {
