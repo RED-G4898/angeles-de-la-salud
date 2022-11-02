@@ -50,4 +50,6 @@ function getArrayList (listType, listID = "list", listClass = "list-style", list
     return list;
 }
 
-export { addClass, removeClass, toggleClass, hasClass, insertHtml, addHtml, getArrayOfObjectProp, getArrayList };
+const toFirstLetterUpperCase = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+
+export { addClass, removeClass, toggleClass, hasClass, insertHtml, addHtml, getArrayOfObjectProp, getArrayList, toFirstLetterUpperCase };

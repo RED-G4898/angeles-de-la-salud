@@ -63,6 +63,12 @@ $base-font: 'NeueHaasGroteskDisp Pro', sans-serif
   grid-template-areas: $areas
   grid-gap: $gap
 
+@mixin flex($justify, $align, $direction, $wrap)
+  display: flex
+  justify-content: $justify
+  align-items: $align
+  flex-flow: $direction $wrap
+
 // Placeholders
 
 %flex-center

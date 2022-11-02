@@ -1,3 +1,5 @@
+import { toFirstLetterUpperCase } from "./JSUtils.js";
+
 class Product{ // Definiction of Product class
     constructor(name, fasPrice, competitionPrice, img, description){
         this.name = name;
@@ -32,7 +34,7 @@ const stock = { // Helps to check if a product is available to be added to the c
     availableNaturales: [],
 }
 
-const productOfferCardTemplate = (cardImg, cardTitle, cardDescription) => `
+const productOfferCardTemplate = (cardImg, cardTitle, cardDescription) => /* html */`
 	<article class="flip-card">
 		<section class="flip-card-content">
 			<section class="flip-card-content-front">
@@ -62,7 +64,7 @@ const productOfferCardTemplate = (cardImg, cardTitle, cardDescription) => `
 	</article>
 `;
 
-const productCardTemplate = (cardImg, cardTitle, cardDescription, fasPrice, competitionPrice) => `
+const productCardTemplate = (cardImg, cardTitle, cardDescription, fasPrice, competitionPrice) => /* html */`
 <article class="flip-card">
     <section class="flip-card-content">
         <section class="flip-card-content-front">
@@ -90,22 +92,26 @@ const productCardTemplate = (cardImg, cardTitle, cardDescription, fasPrice, comp
                 <p>$${fasPrice}</p>
                 <h6>Precio en la competencia</h6>
                 <p>$${competitionPrice}</p>
-                <button>prueba</button>
+                <div id="flip-card-btn" class="flip-card-button">
+                    <p>Comparar precio</p>
+                </div>
             </div>
         </section>
     </section>
 </article>
 `;
 
+
+
 function insertOfferCardHTML(htmlElement, array){
     for (const element of array) {
-        htmlElement.innerHTML += productOfferCardTemplate(element.cardImg, element.cardTitle, element.cardDescription);
+        htmlElement.innerHTML += productOfferCardTemplate(element.cardImg, toFirstLetterUpperCase(element.cardTitle), element.cardDescription);
     }
 }
 
 function insertProductCardHTML(htmlElement, array){
     for (const element of array) {
-        htmlElement.innerHTML += productCardTemplate(element.img, element.name, element.description, element.fasPrice, element.competitionPrice);
+        htmlElement.innerHTML += productCardTemplate(element.img, toFirstLetterUpperCase(element.name), element.description, element.fasPrice, element.competitionPrice);
     }
 }
 
