@@ -1,36 +1,15 @@
-const addClass = (elementID, className) => {
-    let element = document.getElementById(elementID);
-    element.classList.add(className);
-};
+/*
+ *
+ * This script was made by RED with ❤ for Angeles de la Salud
+ * as a project of JavaScript course by CoderHouse
+ *
+ * The script serve to supply general porpuses functions.
+ *
+ * Last update:
+ *
+ */
 
-const removeClass = (elementID, className) => {
-    let element = document.getElementById(elementID);
-    element.classList.remove(className);
-};
-
-
-const hasClass = (elementID, className) => {
-    let element = document.getElementById(elementID);
-    element.classList.contains(className);
-}
-
-const toggleClass = (elementID, className) => {
-    if (hasClass(elementID, className)) {
-        removeClass(elementID, className);
-        return;
-    }
-    addClass(elementID, className);
-}
-
-const insertHtml = (element, html) => {
-    element = document.getElementById(element);
-    element.innerHTML = html;
-}
-
-const addHtml = (element, html) => {
-    element = document.getElementById(element);
-    element.innerHTML += html;
-}
+const toFirstLetterUpperCase = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
 const getArrayOfObjectProp = (array, property) => array.map(element => element[property]);
 
@@ -59,6 +38,4 @@ function getArrayList (listType, listID = "list", listClass = "list-style", list
     return list;
 }
 
-const toFirstLetterUpperCase = (string) => string.charAt(0).toUpperCase() + string.slice(1);
-
-export { addClass, removeClass, toggleClass, hasClass, insertHtml, addHtml, getArrayOfObjectProp, getArrayList, toFirstLetterUpperCase };
+export { getArrayOfObjectProp, getArrayList, toFirstLetterUpperCase };

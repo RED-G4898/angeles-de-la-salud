@@ -133,6 +133,12 @@
 
   background-color: g.$dark-color-d9
 
+  p
+    color: g.$light-color
+
+.f_center
+  justify-content: center
+
 .flip-card-button
   // Display & position
   position: relative
@@ -201,10 +207,34 @@
 
 .cart-content-list
   list-style-type: none
+  line-height: 32px
 
 .cart-content-list__element
   word-spacing: 2rem
   @include g.light-font(normal, 1.2rem, g.$dark-color)
+
+.cart-content__empty-btn
+  // Display & position
+  margin-top: 16px
+  border-radius: 6px
+  padding: 8px 8px
+  background-color: g.$primary-color
+  width: fit-content
+
+  // Typography
+  @include g.regular-font(normal, 1.2rem, g.$light-color)
+  text-decoration: none
+
+  transition: all 0.1s ease-in-out
+
+  cursor: pointer
+
+  &:hover
+      // Box Model
+      box-shadow: 10px 12px 100px g.$hover-color_button inset
+
+      // Transitions & animations
+      transform: translateY(1px)
 
 // Media queries
 

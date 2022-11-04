@@ -1,3 +1,15 @@
+/*
+ *
+ * This script was made by RED with ❤ for Angeles de la Salud
+ * as a project of JavaScript course by CoderHouse
+ *
+ * The script serve as a kind of data modeler to determine how
+ * data is treated and how it is displayed in the HTML.
+ *
+ * Last update:
+ *
+ */
+
 import { toFirstLetterUpperCase } from "./JSUtils.js";
 
 class Product{ // Definiction of Product class
@@ -7,9 +19,6 @@ class Product{ // Definiction of Product class
         this.competitionPrice = competitionPrice;
         this.img = img;
         this.description = description;
-    }
-    comparePrices(){
-        alert(`El precio de "${this.name.charAt(0).toUpperCase() + this.name.slice(1)}" en Farmacias Ángeles de la Salud es de $${this.fasPrice}.\nEn la competencia el precio es de $${this.competitionPrice}.\n\nSi compra en Farmacias Ángeles de la Salud usted ahorra $${calcSavings(this.fasPrice,this.competitionPrice)}.`);
     }
 }
 
@@ -26,7 +35,6 @@ const cart = { // Store products selected by the user and other data related to 
     fasTotal: 0,
     competitionTotal: 0,
     savings: 0,
-    productList: "",
 }
 
 const stock = { // Helps to check if a product is available to be added to the cart.
@@ -55,9 +63,9 @@ const productOfferCardTemplate = (cardImg, cardTitle, cardDescription) => /* htm
 						src="${cardImg}"
 						alt="" />
 				</div>
-				<div class="flip-card-content-back-content">
+				<div class="flip-card-content-back-content f_center">
 					<h5 class="flip-card-content-back-content__title">${cardTitle}</h5>
-					<p>${cardDescription}</p>
+					<p class="w-80">${cardDescription}</p>
 				</div>
 			</section>
 		</section>
@@ -101,7 +109,16 @@ const productCardTemplate = (cardImg, cardTitle, cardDescription, fasPrice, comp
 </article>
 `;
 
-
+function calcTotals(){
+    cart.fasTotal = 0;
+    cart.competitionTotal = 0;
+    cart.savings = 0;
+    for (const product of cart.products) {
+        cart.fasTotal += product.fasPrice;
+        cart.competitionTotal += product.competitionPrice;
+    }
+    cart.savings = cart.competitionTotal - cart.fasTotal;
+}
 
 function insertOfferCardHTML(htmlElement, array){
     for (const element of array) {
@@ -115,4 +132,20 @@ function insertProductCardHTML(htmlElement, array){
     }
 }
 
-export { Product, ProductOfferCard, cart, stock, insertOfferCardHTML, insertProductCardHTML };
+function insertTotalsHTML(htmlElement){
+    calcTotals();
+    if (cart.fasTotal <= 0) {
+        htmlElement.innerHTML = ``;
+        return;
+    }
+    htmlElement.innerHTML = /* html */`
+    <h5 class="h5_dark">Total en Ángeles de la Salud</h5>
+    <p>$${cart.fasTotal}</p>
+    <h5 class="h5_dark">Total en la competencia</h5>
+    <p>$${cart.competitionTotal}</p>
+    <h5 class="h5_dark">Ahorro comprando en Ángeles de la Salud</h5>
+    <p>$${cart.savings}</p>
+    `;
+}
+
+export { Product, ProductOfferCard, cart, stock, insertOfferCardHTML, insertProductCardHTML, insertTotalsHTML };
