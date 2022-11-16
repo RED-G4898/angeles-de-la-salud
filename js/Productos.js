@@ -15,6 +15,7 @@
  *
  */
 
+import { $, jQuery } from './jquery-3.6.0.min.js';
 import { getArrayList } from "./JSUtils.js";
 import { Product, ProductOfferCard, cart, stock, insertOfferCardHTML, insertProductCardHTML, insertTotalsHTML } from "./ProductComparator.js";
 
