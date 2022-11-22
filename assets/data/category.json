@@ -1,0 +1,44 @@
+[
+    {
+        "id": 0,
+        "name": "Plantas Medicinales",
+        "description": "Ponemos a tu disposición un amplio catálogo de plantas medicinales que podrás adquirir bajo pedido.",
+        "img": "herbs.jpg",
+        "type": "naturales"
+    },
+    {
+        "id": 1,
+        "name": "Cápsulas",
+        "description": "Plantas, cortezas y vegetales son algunos de los artículos que podrás encontrar como encapsulados y para complementar tus dietas, o distintos tratamientos.",
+        "img": "herb-capsules.jpg",
+        "type": "naturales"
+    },
+    {
+        "id": 2,
+        "name": "Extractos de Plantas",
+        "description": "Además de encapsulados y plantas en crudo, también tenemos para ti extractos de plantas que puedes tomar en disoluciones con alcohol o agua.",
+        "img": "herb-extract.jpg",
+        "type": "naturales"
+    },
+    {
+        "id": 3,
+        "name": "Antibióticos",
+        "description": "Tenemos a la venta los antibióticos de tu receta médica a los mejores precios del mercado y de la mejor calidad",
+        "img": "antibiotic.jpg",
+        "type": "genericos"
+    },
+    {
+        "id": 4,
+        "name": "Analgésicos",
+        "description": "Te duele la cabeza o necesitas algún analgésico prescrito por tu médico, contamos con un amplio catálogo de analgésicos para todo tipo de dolores.",
+        "img": "analgesic.jpg",
+        "type": "genericos"
+    },
+    {
+        "id": 5,
+        "name": "Suministros Médicos",
+        "description": "Si te caíste o sufriste de alguna quemadura tenemos a tu disposición vendas, gasas, alcohol y otros suministros médicos de uso común a los mejores precios.",
+        "img": "medical-supplies.jpg",
+        "type": "genericos"
+    }
+]
