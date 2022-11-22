@@ -73,7 +73,7 @@ export const productOfferCardTemplate = (cardImg, cardTitle, cardDescription) =>
 	</article>
 `;
 
-export const productCardTemplate = (cardImg, cardTitle, cardDescription, fasPrice, competitionPrice) => /* html */`
+export const productCardTemplate = (index, cardImg, cardTitle, cardDescription, fasPrice, competitionPrice) => /* html */`
 <article class="flip-card">
     <section class="flip-card-content">
         <section class="flip-card-content-front">
@@ -101,7 +101,7 @@ export const productCardTemplate = (cardImg, cardTitle, cardDescription, fasPric
                 <p>$${fasPrice}</p>
                 <h6>Precio en la competencia</h6>
                 <p>$${competitionPrice}</p>
-                <div id="flip-card-btn" class="flip-card-button">
+                <div id="flip-card-btn" class="flip-card-button" data-index="${index}">
                     <p>Comparar precio</p>
                 </div>
             </div>

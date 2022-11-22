@@ -14,16 +14,19 @@
  * Last update:
  *
  */
+// Execute when the page is loaded.
 
 import $ from "./jquery.js";
-import {Tabulator} from './tabulator_esm.min.js';
-import { Grid } from './gridjs.production.es.min.js'
+import Swal from 'https://cdn.jsdelivr.net/npm/sweetalert2@11/src/sweetalert2.js';
 import { getArrayList, dataAccess } from "./JSUtils.js";
 import { Product, ProductOfferCard, productOfferCardTemplate, productCardTemplate, cart, stock, insertOfferCardHTML, insertProductCardHTML, insertTotalsHTML, calcTotals } from "./ProductComparator.js";
 
-// Load JSON data of categories and products and load it into JS objects.
 const categories = await dataAccess("./../assets/data/category.json");
 stock.availableProducts = await dataAccess("./../assets/data/product.json");
+
+let index = 0;
+
+// Load JSON data of categories and products and load it into JS objects.
 
 // Check if there is a cart in local storage and load it.
 if (localStorage.getItem("cart") !== null) {
@@ -35,8 +38,8 @@ $("#product-offer-naturales").html(categories.filter(element => element.type ===
 $("#product-offer-genericos").html(categories.filter(element => element.type === "genericos").map(element => productOfferCardTemplate(`https://spaces.redg.dev/angeles-de-la-salud/assets/productos/${element.img}`, element.name, element.description)));
 
 // Load products cards into the page.
-$("#available-genericos").html(stock.availableProducts.filter(element => element.category === "genericos").map(element => productCardTemplate(`https://spaces.redg.dev/angeles-de-la-salud/assets/productos/${element.image}`, element.name, element.description, element.fasPrice, element.competitionPrice)));
-$("#available-naturales").html(stock.availableProducts.filter(element => element.category === "naturales").map(element => productCardTemplate(`https://spaces.redg.dev/angeles-de-la-salud/assets/productos/${element.image}`, element.name, element.description, element.fasPrice, element.competitionPrice)));
+$("#available-genericos").html(stock.availableProducts.filter(element => element.category === "genericos").map(element => productCardTemplate(index++, `https://spaces.redg.dev/angeles-de-la-salud/assets/productos/${element.image}`, element.name, element.description, element.fasPrice, element.competitionPrice)));
+$("#available-naturales").html(stock.availableProducts.filter(element => element.category === "naturales").map(element => productCardTemplate(index++, `https://spaces.redg.dev/angeles-de-la-salud/assets/productos/${element.image}`, element.name, element.description, element.fasPrice, element.competitionPrice)));
 
 // Toggle visibility of product card section.
 $("#available-genericos-band").click(() => {
@@ -64,15 +67,39 @@ $("#cart-content-close-btn").click(() => {
 
 // Add product to cart.
 $(".flip-card-button").click(function() {
-    cart.products.push(stock.availableProducts[$(".flip-card-button").index(this)]);
+    cart.products.push(stock.availableProducts[$(this).attr("data-index")]);
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Producto añadido al comparador',
+        showConfirmButton: false,
+        timer: 1250
+    })
 });
 
 // Remove product from cart.
 $("#cart-content-container").on("click", ".cart-list__del-btn", function() {
-    cart.products.splice($(".cart-list__del-btn").index(this), 1);
-    $("#cart-content-container").html(getArrayList("ul", "cart-content-list", "cart-content-list", "cart-content-list__element", cart.products, true, "name", "fasPrice", "competitionPrice"));
-    calcTotals();
-    $("#cart-content-totals").html(insertTotalsHTML());
+    Swal.fire({
+        title: `¿Deseas eliminar ${cart.products[$(".cart-list__del-btn").index(this)].name} del comparador?`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Eliminar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            cart.products.splice($(".cart-list__del-btn").index(this), 1);
+            $("#cart-content-container").html(getArrayList("ul", "cart-content-list", "cart-content-list", "cart-content-list__element", cart.products, true, "name", "fasPrice", "competitionPrice"));
+            calcTotals();
+            $("#cart-content-totals").html(insertTotalsHTML());
+            Swal.fire(
+                'Producto eliminado',
+                'El producto ha sido eliminado del comparador.',
+                'success'
+            )
+        }
+    })
 });
 
 // Clear cart.
