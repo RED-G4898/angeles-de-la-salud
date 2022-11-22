@@ -9,11 +9,11 @@
  *
  */
 
-const toFirstLetterUpperCase = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+export const toFirstLetterUpperCase = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
 const getArrayOfObjectProp = (array, property) => array.map(element => element[property]);
 
-function insertListElement (array, listElementsClass, delBtn, list, ...properties) {
+export function insertListElement (array, listElementsClass, delBtn, list, ...properties) {
     let tempList = list;
     array.forEach((element, index) => {
         tempList += `<li class="${listElementsClass}" index="${index}">`;
@@ -25,7 +25,7 @@ function insertListElement (array, listElementsClass, delBtn, list, ...propertie
     return tempList;
 }
 
-function getArrayList (listType, listID = "list", listClass = "list-style", listElementsClass = "list-element", array = [], delBtn, ...properties){
+export function getArrayList (listType, listID = "list", listClass = "list-style", listElementsClass = "list-element", array = [], delBtn, ...properties){
     let list = "";
 
     if(array.length < 1) {
@@ -38,4 +38,8 @@ function getArrayList (listType, listID = "list", listClass = "list-style", list
     return list;
 }
 
-export { getArrayOfObjectProp, getArrayList, toFirstLetterUpperCase };
+export const dataAccess = async(url) => {
+    const dataRequest = await fetch(url);
+    const dataContent = await dataRequest.json();
+    return dataContent;
+}

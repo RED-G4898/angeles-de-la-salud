@@ -13,12 +13,14 @@
 import { toFirstLetterUpperCase } from "./JSUtils.js";
 
 class Product{ // Definiction of Product class
-    constructor(name, fasPrice, competitionPrice, img, description){
+    constructor(id, name, description, fasPrice, competitionPrice, img, category){
+        this.id = id;
         this.name = name;
+        this.description = description;
         this.fasPrice = fasPrice;
         this.competitionPrice = competitionPrice;
         this.img = img;
-        this.description = description;
+        this.category = category;
     }
 }
 
@@ -38,11 +40,10 @@ const cart = { // Store products selected by the user and other data related to 
 }
 
 const stock = { // Helps to check if a product is available to be added to the cart.
-    availableGenericos: [],
-    availableNaturales: [],
+    availableProducts: [],
 }
 
-const productOfferCardTemplate = (cardImg, cardTitle, cardDescription) => /* html */`
+export const productOfferCardTemplate = (cardImg, cardTitle, cardDescription) => /* html */`
 	<article class="flip-card">
 		<section class="flip-card-content">
 			<section class="flip-card-content-front">
@@ -72,7 +73,7 @@ const productOfferCardTemplate = (cardImg, cardTitle, cardDescription) => /* htm
 	</article>
 `;
 
-const productCardTemplate = (cardImg, cardTitle, cardDescription, fasPrice, competitionPrice) => /* html */`
+export const productCardTemplate = (cardImg, cardTitle, cardDescription, fasPrice, competitionPrice) => /* html */`
 <article class="flip-card">
     <section class="flip-card-content">
         <section class="flip-card-content-front">
@@ -109,15 +110,15 @@ const productCardTemplate = (cardImg, cardTitle, cardDescription, fasPrice, comp
 </article>
 `;
 
-function calcTotals(){
+export function calcTotals(){
     cart.fasTotal = 0;
     cart.competitionTotal = 0;
     cart.savings = 0;
     for (const product of cart.products) {
-        cart.fasTotal += product.fasPrice;
-        cart.competitionTotal += product.competitionPrice;
+        cart.fasTotal = Number(cart.fasTotal) + Number(product.fasPrice);
+        cart.competitionTotal = Number(cart.competitionTotal) + Number(product.competitionPrice);
     }
-    cart.savings = cart.competitionTotal - cart.fasTotal;
+    cart.savings = Number(cart.competitionTotal) - Number(cart.fasTotal);
 }
 
 function insertOfferCardHTML(htmlElement, array){
@@ -132,13 +133,11 @@ function insertProductCardHTML(htmlElement, array){
     }
 }
 
-function insertTotalsHTML(htmlElement){
-    calcTotals();
+function insertTotalsHTML(){
     if (cart.fasTotal <= 0) {
-        htmlElement.innerHTML = ``;
-        return;
+        return ``;
     }
-    htmlElement.innerHTML = /* html */`
+    return /* html */`
     <h5 class="h5_dark">Total en Ángeles de la Salud</h5>
     <p>$${cart.fasTotal}</p>
     <h5 class="h5_dark">Total en la competencia</h5>
