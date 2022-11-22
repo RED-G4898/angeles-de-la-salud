@@ -1,0 +1,209 @@
+[
+    {
+        "id": 0,
+        "name": "Paracetamol",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "paracetamol.jfif",
+        "category": "genericos"
+    },
+    {
+        "id": 1,
+        "name": "Ibuprofeno",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "ibuprofeno.jfif",
+        "category": "genericos"
+    },
+    {
+        "id": 2,
+        "name": "Cetirizina",
+        "description": "30 pastillas de 10mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "cetirizina.jpg",
+        "category": "genericos"
+    },
+    {
+        "id": 3,
+        "name": "Amoxicilina",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "amoxicilina.jpg",
+        "category": "genericos"
+    },
+    {
+        "id": 4,
+        "name": "Acetaminofen",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "acetaminofen.webp",
+        "category": "genericos"
+    },
+    {
+        "id": 5,
+        "name": "Dipirona",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "dipirona.jfif",
+        "category": "genericos"
+    },
+    {
+        "id": 6,
+        "name": "Dexametasona",
+        "description": "30 pastillas de 4mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "dexametasona.jfif",
+        "category": "genericos"
+    },
+    {
+        "id": 7,
+        "name": "Acido Acetilsalicilico",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "acido-acetilsalicilico.webp",
+        "category": "genericos"
+    },
+    {
+        "id": 8,
+        "name": "Ciprofloxacino",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "ciprofloxacino.jfif",
+        "category": "genericos"
+    },
+    {
+        "id": 9,
+        "name": "Loratadina",
+        "description": "30 pastillas de 10mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "loratadina.webp",
+        "category": "genericos"
+    },
+    {
+        "id": 10,
+        "name": "Omeprazol",
+        "description": "30 pastillas de 20mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "omeprazol.webp",
+        "category": "genericos"
+    },
+    {
+        "id": 11,
+        "name": "Manzanilla",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "manzanilla.jfif",
+        "category": "naturales"
+    },
+    {
+        "id": 12,
+        "name": "Valeriana",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "valeriana.jfif",
+        "category": "naturales"
+    },
+    {
+        "id": 13,
+        "name": "Melisa",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "melisa.jfif",
+        "category": "naturales"
+    },
+    {
+        "id": 14,
+        "name": "Tila",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "tila.jfif",
+        "category": "naturales"
+    },
+    {
+        "id": 15,
+        "name": "Menta",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "menta.jfif",
+        "category": "naturales"
+    },
+    {
+        "id": 16,
+        "name": "Hierbabuena",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "hierbabuena.jpg",
+        "category": "naturales"
+    },
+    {
+        "id": 17,
+        "name": "Uña de gato",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "uña-de-gato.jpg",
+        "category": "naturales"
+    },
+    {
+        "id": 18,
+        "name": "Cola de caballo",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "cola-de-caballo.jfif",
+        "category": "naturales"
+    },
+    {
+        "id": 19,
+        "name": "Té verde",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "te-verde.jfif",
+        "category": "naturales"
+    },
+    {
+        "id": 20,
+        "name": "Té rojo",
+        "description": "30 pastillas de 500mg",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "te-rojo.jpg",
+        "category": "naturales"
+    },
+    {
+        "id": 21,
+        "name": "Curitas",
+        "description": "15 unidades",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "curitas.jfif",
+        "category": "suministros"
+    },
+    {
+        "id": 22,
+        "name": "Alcohol",
+        "description": "1 L",
+        "fasPrice": 10.00,
+        "competitionPrice": 15.00,
+        "image": "alcohol.jpg",
+        "category": "suministros"
+    }
+]
